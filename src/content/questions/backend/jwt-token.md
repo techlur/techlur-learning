@@ -3,7 +3,7 @@ question: "What is a JWT and how is it used?"
 section: "backend"
 difficulty: "medium"
 tags: ["auth", "security", "jwt"]
-order: 2
+order: 7
 ---
 
 A **JSON Web Token** is a compact, signed token with three dot-separated parts: **Header.Payload.Signature**.

@@ -3,7 +3,7 @@ question: "What is middleware, and what is a guard?"
 section: "backend"
 difficulty: "medium"
 tags: ["nestjs", "express", "middleware"]
-order: 3
+order: 8
 ---
 
 **Middleware** is a function that runs in the request pipeline before the route handler, with access to `req`, `res`, and `next()`. Used for logging, body parsing, CORS, auth checks.
