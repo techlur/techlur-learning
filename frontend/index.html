@@ -11,18 +11,668 @@
 Get free consultation
 </a> </div> <!-- Mobile: theme toggle + hamburger --> <div class="mobile-actions"> <button class="theme-toggle" id="themeToggleMobile" aria-label="Toggle dark mode"> <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg> <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> <button class="mobile-menu-btn" aria-label="Open menu"> <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg> </button> </div> </div> </nav> </header> <!-- Mobile drawer --> <div class="mobile-backdrop"></div> <div class="mobile-drawer"> <div class="mobile-drawer-header"> <a href="/"> <img src="/images/techlur-logo.svg" alt="techlur logo" class="logo-light"> <img src="/images/techlur-logo-white.svg" alt="techlur logo" class="logo-dark"> </a> <button class="mobile-close-btn" aria-label="Close menu"> <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg> </button> </div> <a href="/backend" class="mobile-nav-link">Backend</a><a href="/frontend" class="mobile-nav-link">Frontend</a><a href="/database" class="mobile-nav-link">Database</a><a href="/ai" class="mobile-nav-link">AI &amp; LLMs</a><a href="/general" class="mobile-nav-link">General &amp; HR</a> <a href="https://techlursoftware.com/contact" target="_blank" rel="noopener" class="mobile-cta">
 Get free consultation
-</a> </div> <main>  <section class="head" data-astro-cid-a64eq3ge> <a class="back" href="/" data-astro-cid-a64eq3ge>&larr; all sections</a> <h1 data-astro-cid-a64eq3ge>Frontend</h1> <p class="desc" data-astro-cid-a64eq3ge>JavaScript core, the browser, React, and CSS.</p> <div class="tools" data-astro-cid-a64eq3ge> <button id="expand" data-astro-cid-a64eq3ge>Expand all</button> <button id="collapse" data-astro-cid-a64eq3ge>Collapse all</button> <span class="n" data-astro-cid-a64eq3ge>3 questions</span> </div> </section> <div class="list" data-astro-cid-a64eq3ge> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What is a closure?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>A closure is a function that <strong>remembers the variables from the scope where it was created</strong>, even after that outer function has returned. It’s the basis for data privacy and hooks like <code>useState</code>.</p>
+</a> </div> <main>  <section class="head" data-astro-cid-a64eq3ge> <a class="back" href="/" data-astro-cid-a64eq3ge>&larr; all sections</a> <h1 data-astro-cid-a64eq3ge>Frontend</h1> <p class="desc" data-astro-cid-a64eq3ge>JavaScript core, the browser, React, and CSS.</p> <div class="tools" data-astro-cid-a64eq3ge> <button id="expand" data-astro-cid-a64eq3ge>Expand all</button> <button id="collapse" data-astro-cid-a64eq3ge>Collapse all</button> <span class="n" data-astro-cid-a64eq3ge>24 questions</span> </div> </section> <div class="list" data-astro-cid-a64eq3ge> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>Explain var vs let vs const.</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p><strong><code>var</code></strong> is function-scoped and hoisted to the top of its function (initialized as <code>undefined</code>). It can be re-declared and reassigned.</p>
+<p><strong><code>let</code></strong> is block-scoped (<code>{}</code>). It is hoisted but <strong>not</strong> initialized, so accessing it before declaration throws a <code>ReferenceError</code> (the temporal dead zone). It can be reassigned but not re-declared in the same scope.</p>
+<p><strong><code>const</code></strong> is also block-scoped and must be initialized at declaration. It <strong>cannot be reassigned</strong>, but if the value is an object or array, the contents can still be mutated.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">var</span><span style="color:#E1E4E8"> a </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">var</span><span style="color:#E1E4E8"> a </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;   </span><span style="color:#6A737D">// OK — re-declaration allowed</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> b </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">b </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;       </span><span style="color:#6A737D">// OK — reassignment allowed</span></span>
+<span class="line"><span style="color:#6A737D">// let b = 3; // SyntaxError — no re-declaration</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> c</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> { x: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> };</span></span>
+<span class="line"><span style="color:#E1E4E8">c.x </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;    </span><span style="color:#6A737D">// OK — mutation allowed</span></span>
+<span class="line"><span style="color:#6A737D">// c = {};   // TypeError — reassignment blocked</span></span></code></pre>
+<blockquote>
+<p><strong>Rule of thumb:</strong> default to <code>const</code>, use <code>let</code> when you need reassignment, avoid <code>var</code>.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#javascript</span><span class="chip" data-astro-cid-r364hnea>#variables</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What is a closure?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>A closure is a function that <strong>remembers the variables from the scope where it was created</strong>, even after that outer function has returned. It’s the basis for data privacy and hooks like <code>useState</code>.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> counter</span><span style="color:#E1E4E8">() {</span></span>
 <span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> n </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#F97583"> ++</span><span style="color:#E1E4E8">n; </span><span style="color:#6A737D">// closes over n</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> next</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> counter</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#B392F0">next</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// 1</span></span>
-<span class="line"><span style="color:#B392F0">next</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// 2</span></span></code></pre> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#javascript</span><span class="chip" data-astro-cid-r364hnea>#fundamentals</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What is the Virtual DOM and how does React use it?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>The Virtual DOM is a lightweight in-memory copy of the UI. On a state change, React builds a new tree, <strong>diffs</strong> it against the old one (reconciliation), and updates only the changed real-DOM nodes — far cheaper than re-rendering everything.</p> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#react</span><span class="chip" data-astro-cid-r364hnea>#rendering</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>Explain useState and useEffect.</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p><strong>useState</strong> adds local state and returns the value plus a setter. <strong>useEffect</strong> runs side effects (data fetching, subscriptions) after render; its dependency array controls when it re-runs, and the returned function cleans up.</p>
+<span class="line"><span style="color:#B392F0">next</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// 2</span></span></code></pre> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#javascript</span><span class="chip" data-astro-cid-r364hnea>#fundamentals</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What is hoisting?</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>Hoisting is JavaScript’s behavior of moving <strong>declarations</strong> to the top of their scope during the compile phase, before any code executes.</p>
+<ul>
+<li><strong><code>var</code></strong> declarations are hoisted and initialized as <code>undefined</code>, so you can reference them before the declaration line without an error.</li>
+<li><strong><code>let</code> / <code>const</code></strong> declarations are hoisted but <strong>not</strong> initialized. Accessing them before their declaration throws a <code>ReferenceError</code> — the region before initialization is called the <strong>temporal dead zone (TDZ)</strong>.</li>
+<li><strong>Function declarations</strong> are fully hoisted (both name and body), so they can be called before they appear in the code.</li>
+<li><strong>Function expressions</strong> and <strong>arrow functions</strong> assigned to variables follow the rules of the variable keyword (<code>var</code>, <code>let</code>, or <code>const</code>).</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(x); </span><span style="color:#6A737D">// undefined (var is hoisted)</span></span>
+<span class="line"><span style="color:#F97583">var</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 5</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(y); </span><span style="color:#6A737D">// ReferenceError (TDZ)</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> y </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">greet</span><span style="color:#E1E4E8">();        </span><span style="color:#6A737D">// "Hello!" (function declaration is fully hoisted)</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> greet</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Hello!"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#javascript</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What does the this keyword refer to?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>The value of <code>this</code> depends on <strong>how</strong> a function is called, not where it is defined.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Call style</th><th><code>this</code> value</th></tr></thead><tbody><tr><td><strong>Method call</strong> (<code>obj.fn()</code>)</td><td>The calling object (<code>obj</code>)</td></tr><tr><td><strong>Plain call</strong> (<code>fn()</code>)</td><td><code>undefined</code> in strict mode, <code>globalThis</code> in sloppy mode</td></tr><tr><td><strong><code>new</code> call</strong> (<code>new Fn()</code>)</td><td>The newly created instance</td></tr><tr><td><strong><code>call</code> / <code>apply</code> / <code>bind</code></strong></td><td>Whatever you explicitly pass</td></tr><tr><td><strong>Arrow function</strong></td><td>Inherited from the enclosing lexical scope (not its own <code>this</code>)</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> user</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  name: </span><span style="color:#9ECBFF">"Alice"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  greet</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.name); </span><span style="color:#6A737D">// "Alice" — method call</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  greetLater</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">    setTimeout</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">      console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.name); </span><span style="color:#6A737D">// "Alice" — arrow inherits this</span></span>
+<span class="line"><span style="color:#E1E4E8">    }, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> standalone</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// undefined (strict) or globalThis (sloppy)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<blockquote>
+<p><strong>Tip:</strong> Arrow functions are ideal for callbacks inside methods because they preserve the outer <code>this</code>.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#javascript</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>Explain == vs ===.</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p><strong><code>==</code></strong> (loose equality) compares two values <strong>after type coercion</strong>. JavaScript converts one or both operands to a common type before comparing, which can produce surprising results.</p>
+<p><strong><code>===</code></strong> (strict equality) compares both <strong>value and type</strong> with no coercion. If the types differ, the result is immediately <code>false</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#79B8FF">0</span><span style="color:#F97583"> ==</span><span style="color:#9ECBFF"> ""</span><span style="color:#E1E4E8">;       </span><span style="color:#6A737D">// true  — both coerced to 0</span></span>
+<span class="line"><span style="color:#79B8FF">0</span><span style="color:#F97583"> ===</span><span style="color:#9ECBFF"> ""</span><span style="color:#E1E4E8">;      </span><span style="color:#6A737D">// false — number vs string</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">null</span><span style="color:#F97583"> ==</span><span style="color:#79B8FF"> undefined</span><span style="color:#E1E4E8">;  </span><span style="color:#6A737D">// true  — special coercion rule</span></span>
+<span class="line"><span style="color:#79B8FF">null</span><span style="color:#F97583"> ===</span><span style="color:#79B8FF"> undefined</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// false — different types</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">"1"</span><span style="color:#F97583"> ==</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;      </span><span style="color:#6A737D">// true  — string coerced to number</span></span>
+<span class="line"><span style="color:#9ECBFF">"1"</span><span style="color:#F97583"> ===</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;     </span><span style="color:#6A737D">// false — string vs number</span></span></code></pre>
+<blockquote>
+<p><strong>Best practice:</strong> Always use <code>===</code> (and <code>!==</code>) to avoid accidental coercion bugs. The only common exception is <code>value == null</code>, which conveniently checks for both <code>null</code> and <code>undefined</code>.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#javascript</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What is the difference between shallow and deep copy?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>A <strong>shallow copy</strong> duplicates only the top-level properties. Nested objects and arrays are still <strong>shared</strong> between the original and the copy, so mutating a nested value affects both.</p>
+<p>A <strong>deep copy</strong> recursively duplicates <strong>everything</strong>, so no references are shared.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> original</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> { name: </span><span style="color:#9ECBFF">"Alice"</span><span style="color:#E1E4E8">, address: { city: </span><span style="color:#9ECBFF">"NYC"</span><span style="color:#E1E4E8"> } };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Shallow copy — nested object is shared</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> shallow</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> { </span><span style="color:#F97583">...</span><span style="color:#E1E4E8">original };</span></span>
+<span class="line"><span style="color:#E1E4E8">shallow.address.city </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "LA"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(original.address.city); </span><span style="color:#6A737D">// "LA" — both changed!</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Deep copy — fully independent</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> deep</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> structuredClone</span><span style="color:#E1E4E8">(original);</span></span>
+<span class="line"><span style="color:#E1E4E8">deep.address.city </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "Chicago"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(original.address.city); </span><span style="color:#6A737D">// "LA" — original untouched</span></span></code></pre>
+<p><strong>Common ways to copy:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Depth</th></tr></thead><tbody><tr><td>Spread (<code>{ ...obj }</code>) / <code>Object.assign</code></td><td>Shallow</td></tr><tr><td><code>Array.from()</code> / <code>[...arr]</code></td><td>Shallow</td></tr><tr><td><code>structuredClone(obj)</code></td><td>Deep</td></tr><tr><td><code>JSON.parse(JSON.stringify(obj))</code></td><td>Deep (but drops functions, <code>undefined</code>, <code>Date</code> objects, etc.)</td></tr></tbody></table>
+<blockquote>
+<p><strong>Tip:</strong> <code>structuredClone</code> (available in all modern runtimes) is the safest built-in deep copy method.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#javascript</span><span class="chip" data-astro-cid-r364hnea>#objects</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What are map, filter, and reduce?</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>These three array methods are the foundation of functional-style data transformation in JavaScript. None of them mutate the original array.</p>
+<p><strong><code>map</code></strong> — transforms every element and returns a new array of the same length.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">[</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">].</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">n</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> n </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// [2, 4, 6]</span></span></code></pre>
+<p><strong><code>filter</code></strong> — returns a new array containing only elements that pass the test.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">[</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">].</span><span style="color:#B392F0">filter</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">n</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> n </span><span style="color:#F97583">%</span><span style="color:#79B8FF"> 2</span><span style="color:#F97583"> ===</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// [2, 4]</span></span></code></pre>
+<p><strong><code>reduce</code></strong> — boils the array down to a <strong>single value</strong> by running an accumulator function on each element.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">[</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">].</span><span style="color:#B392F0">reduce</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">sum</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">n</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> sum </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> n, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// 10</span></span></code></pre>
+<p><strong>Chaining them together:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> orders</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#E1E4E8">  { item: </span><span style="color:#9ECBFF">"Book"</span><span style="color:#E1E4E8">, price: </span><span style="color:#79B8FF">12</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  { item: </span><span style="color:#9ECBFF">"Pen"</span><span style="color:#E1E4E8">, price: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  { item: </span><span style="color:#9ECBFF">"Bag"</span><span style="color:#E1E4E8">, price: </span><span style="color:#79B8FF">35</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> total</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> orders</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">filter</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">o</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> o.price </span><span style="color:#F97583">></span><span style="color:#79B8FF"> 5</span><span style="color:#E1E4E8">)     </span><span style="color:#6A737D">// keep expensive items</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">o</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> o.price)            </span><span style="color:#6A737D">// extract prices</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">reduce</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">sum</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">p</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> sum </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> p, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// sum them</span></span>
+<span class="line"><span style="color:#6A737D">// total = 47</span></span></code></pre> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#javascript</span><span class="chip" data-astro-cid-r364hnea>#arrays</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What is the Virtual DOM and how does React use it?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>The Virtual DOM is a lightweight in-memory copy of the UI. On a state change, React builds a new tree, <strong>diffs</strong> it against the old one (reconciliation), and updates only the changed real-DOM nodes — far cheaper than re-rendering everything.</p> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#react</span><span class="chip" data-astro-cid-r364hnea>#rendering</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>Explain useState and useEffect.</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p><strong>useState</strong> adds local state and returns the value plus a setter. <strong>useEffect</strong> runs side effects (data fetching, subscriptions) after render; its dependency array controls when it re-runs, and the returned function cleans up.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#B392F0">useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> id</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> setInterval</span><span style="color:#E1E4E8">(tick, </span><span style="color:#79B8FF">1000</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#B392F0"> clearInterval</span><span style="color:#E1E4E8">(id); </span><span style="color:#6A737D">// cleanup</span></span>
-<span class="line"><span style="color:#E1E4E8">}, []); </span><span style="color:#6A737D">// [] = run once on mount</span></span></code></pre> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#react</span><span class="chip" data-astro-cid-r364hnea>#hooks</span> </div> </div> </details>  </div> <script>
+<span class="line"><span style="color:#E1E4E8">}, []); </span><span style="color:#6A737D">// [] = run once on mount</span></span></code></pre> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#react</span><span class="chip" data-astro-cid-r364hnea>#hooks</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>Explain debounce vs throttle.</span> <span class="tag hard" data-astro-cid-r364hnea>hard</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>Both techniques limit how often a function fires, but they work differently.</p>
+<p><strong>Debounce</strong> — waits until the user <strong>stops</strong> triggering the event for a set delay, then fires <strong>once</strong>. Each new trigger resets the timer.</p>
+<p>Use case: search-as-you-type input, window resize handler.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> debounce</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">fn</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">delay</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> timer;</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">...</span><span style="color:#FFAB70">args</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">    clearTimeout</span><span style="color:#E1E4E8">(timer);</span></span>
+<span class="line"><span style="color:#E1E4E8">    timer </span><span style="color:#F97583">=</span><span style="color:#B392F0"> setTimeout</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> fn</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">args), delay);</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">input.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"input"</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">debounce</span><span style="color:#E1E4E8">(handleSearch, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">));</span></span></code></pre>
+<p><strong>Throttle</strong> — fires at most <strong>once per interval</strong>, no matter how many times the event triggers. It guarantees a steady execution rate.</p>
+<p>Use case: scroll listener, drag handler, rate-limited API calls.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> throttle</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">fn</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">interval</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> lastTime </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">...</span><span style="color:#FFAB70">args</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> now</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Date.</span><span style="color:#B392F0">now</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (now </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> lastTime </span><span style="color:#F97583">>=</span><span style="color:#E1E4E8"> interval) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      lastTime </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> now;</span></span>
+<span class="line"><span style="color:#B392F0">      fn</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">args);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">window.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"scroll"</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">throttle</span><span style="color:#E1E4E8">(handleScroll, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">));</span></span></code></pre>
+<blockquote>
+<p><strong>In short:</strong> Debounce collapses a burst into one call at the end. Throttle spreads calls evenly across time.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#javascript</span><span class="chip" data-astro-cid-r364hnea>#performance</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>localStorage vs sessionStorage vs cookies.</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>All three store data on the client, but they differ in lifetime, size, and behavior.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Feature</th><th><code>localStorage</code></th><th><code>sessionStorage</code></th><th>Cookies</th></tr></thead><tbody><tr><td><strong>Lifetime</strong></td><td>Until explicitly cleared</td><td>Until the tab/window closes</td><td>Set by <code>Expires</code> / <code>Max-Age</code> (or session)</td></tr><tr><td><strong>Size limit</strong></td><td>~5-10 MB</td><td>~5-10 MB</td><td>~4 KB per cookie</td></tr><tr><td><strong>Sent to server</strong></td><td>No</td><td>No</td><td>Yes, on every matching HTTP request</td></tr><tr><td><strong>Scope</strong></td><td>Same origin, all tabs</td><td>Same origin, single tab</td><td>Same origin (configurable with <code>Domain</code>, <code>Path</code>)</td></tr><tr><td><strong>API</strong></td><td><code>setItem</code> / <code>getItem</code></td><td><code>setItem</code> / <code>getItem</code></td><td><code>document.cookie</code> string or <code>Set-Cookie</code> header</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// localStorage</span></span>
+<span class="line"><span style="color:#E1E4E8">localStorage.</span><span style="color:#B392F0">setItem</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"theme"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"dark"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">localStorage.</span><span style="color:#B392F0">getItem</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"theme"</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// "dark"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// sessionStorage</span></span>
+<span class="line"><span style="color:#E1E4E8">sessionStorage.</span><span style="color:#B392F0">setItem</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"token"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"abc123"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Cookie</span></span>
+<span class="line"><span style="color:#E1E4E8">document.cookie </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "lang=en; max-age=86400; path=/"</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<blockquote>
+<p><strong>When to use what:</strong> Use cookies when the server needs the data (auth tokens with <code>HttpOnly</code>). Use <code>localStorage</code> for persistent user preferences. Use <code>sessionStorage</code> for temporary, tab-specific data.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#browser</span><span class="chip" data-astro-cid-r364hnea>#storage</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What is event bubbling and delegation?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p><strong>Event bubbling</strong> is the DOM’s default propagation model: when an event fires on an element, it first runs handlers on that element, then <strong>bubbles up</strong> through every ancestor to the document root.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>click on &#x3C;button></span></span>
+<span class="line"><span>  → button handler</span></span>
+<span class="line"><span>    → div handler</span></span>
+<span class="line"><span>      → body handler</span></span>
+<span class="line"><span>        → document handler</span></span></code></pre>
+<p>You can stop propagation with <code>event.stopPropagation()</code>, but this is rarely needed.</p>
+<p><strong>Event delegation</strong> leverages bubbling by attaching a <strong>single listener on a parent</strong> instead of one listener on every child. The parent checks <code>event.target</code> to determine which child was actually clicked.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// Instead of adding a listener to every &#x3C;li>...</span></span>
+<span class="line"><span style="color:#E1E4E8">document.</span><span style="color:#B392F0">querySelector</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"ul"</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (e.target.tagName </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> "LI"</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Clicked:"</span><span style="color:#E1E4E8">, e.target.textContent);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p><strong>Why delegation is useful:</strong></p>
+<ul>
+<li><strong>Performance</strong> — one listener instead of hundreds.</li>
+<li><strong>Dynamic elements</strong> — new children added later are automatically handled.</li>
+<li><strong>Cleaner code</strong> — less setup and teardown logic.</li>
+</ul> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#browser</span><span class="chip" data-astro-cid-r364hnea>#events</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What happens when you type a URL and press Enter?</span> <span class="tag hard" data-astro-cid-r364hnea>hard</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>This classic question covers the full lifecycle of a web request:</p>
+<ol>
+<li>
+<p><strong>URL parsing</strong> — the browser parses the URL into protocol, host, port, and path.</p>
+</li>
+<li>
+<p><strong>DNS resolution</strong> — the browser checks its cache, then the OS cache, then queries DNS servers to resolve the domain name to an IP address.</p>
+</li>
+<li>
+<p><strong>TCP connection</strong> — a TCP three-way handshake (SYN, SYN-ACK, ACK) establishes a connection with the server.</p>
+</li>
+<li>
+<p><strong>TLS handshake</strong> (HTTPS) — client and server negotiate encryption, exchange certificates, and establish a secure session.</p>
+</li>
+<li>
+<p><strong>HTTP request</strong> — the browser sends the HTTP request (method, headers, cookies) to the server.</p>
+</li>
+<li>
+<p><strong>Server processing</strong> — the server routes the request, runs application logic, queries databases if needed, and builds a response.</p>
+</li>
+<li>
+<p><strong>HTTP response</strong> — the server sends back a status code, headers, and the response body (HTML).</p>
+</li>
+<li>
+<p><strong>HTML parsing</strong> — the browser parses HTML into the <strong>DOM</strong> tree. When it encounters CSS, it builds the <strong>CSSOM</strong> tree. Scripts may block parsing unless marked <code>async</code> or <code>defer</code>.</p>
+</li>
+<li>
+<p><strong>Render tree</strong> — the DOM and CSSOM are combined into a render tree (only visible elements).</p>
+</li>
+<li>
+<p><strong>Layout</strong> — the browser calculates the exact position and size of every element.</p>
+</li>
+<li>
+<p><strong>Paint</strong> — pixels are drawn to the screen, layer by layer.</p>
+</li>
+<li>
+<p><strong>Compositing</strong> — layers are combined in the correct order and sent to the GPU for display.</p>
+</li>
+</ol>
+<blockquote>
+<p>This is a great question to show breadth of knowledge. Interviewers don’t expect every detail — focus on the areas you know best.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#browser</span><span class="chip" data-astro-cid-r364hnea>#networking</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What are Core Web Vitals?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>Core Web Vitals are a set of real-world performance metrics defined by Google that measure <strong>user experience</strong> on the web. They factor into search ranking.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metric</th><th>Measures</th><th>Good threshold</th></tr></thead><tbody><tr><td><strong>LCP</strong> (Largest Contentful Paint)</td><td>Loading — how quickly the main content appears</td><td>&#x3C; 2.5 s</td></tr><tr><td><strong>INP</strong> (Interaction to Next Paint)</td><td>Responsiveness — delay between user input and visual update</td><td>&#x3C; 200 ms</td></tr><tr><td><strong>CLS</strong> (Cumulative Layout Shift)</td><td>Visual stability — how much the page layout shifts unexpectedly</td><td>&#x3C; 0.1</td></tr></tbody></table>
+<p><strong>How to improve each:</strong></p>
+<ul>
+<li><strong>LCP</strong> — optimize images (modern formats, <code>loading="lazy"</code>), preload critical resources, use a CDN, reduce server response time.</li>
+<li><strong>INP</strong> — break up long tasks, use <code>requestIdleCallback</code>, minimize main-thread work, defer non-essential JavaScript.</li>
+<li><strong>CLS</strong> — set explicit <code>width</code>/<code>height</code> on images and embeds, avoid injecting content above existing content, use <code>font-display: swap</code>.</li>
+</ul>
+<blockquote>
+<p><strong>Tools to measure:</strong> Chrome DevTools (Lighthouse), PageSpeed Insights, <code>web-vitals</code> npm package, and Chrome UX Report (CrUX) for field data.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#performance</span><span class="chip" data-astro-cid-r364hnea>#browser</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>Props vs state.</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p><strong>Props</strong> (short for properties) are values <strong>passed from a parent</strong> component to a child. They are <strong>read-only</strong> — a child should never modify its own props.</p>
+<p><strong>State</strong> is data <strong>managed internally</strong> by a component. It can be updated with a setter (e.g., <code>setState</code> or the <code>useState</code> hook), and changes trigger a re-render.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Props</th><th>State</th></tr></thead><tbody><tr><td><strong>Owner</strong></td><td>Parent component</td><td>The component itself</td></tr><tr><td><strong>Mutable?</strong></td><td>No (read-only for the child)</td><td>Yes (via setter function)</td></tr><tr><td><strong>Triggers re-render?</strong></td><td>Yes, when the parent passes new values</td><td>Yes, when updated</td></tr><tr><td><strong>Purpose</strong></td><td>Configure a child from the outside</td><td>Track internal, changing data</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> Greeting</span><span style="color:#E1E4E8">({ </span><span style="color:#FFAB70">name</span><span style="color:#E1E4E8"> }) {       </span><span style="color:#6A737D">// name is a prop</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">count</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setCount</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// count is state</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Hello, {name}!&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setCount</span><span style="color:#E1E4E8">(count </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">)}></span></span>
+<span class="line"><span style="color:#E1E4E8">        Clicked {count} times</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<blockquote>
+<p><strong>Key idea:</strong> Data flows <strong>down</strong> through props. When a child needs to communicate up, the parent passes a callback function as a prop.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#react</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What are keys in lists and why are they important?</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>Keys give React a <strong>stable identity</strong> for each item in a list. During reconciliation (diffing), React uses keys to figure out which items were added, removed, or reordered — without keys, React falls back to comparing by index, which can cause bugs and wasted renders.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#6A737D">// Good — unique, stable id</span></span>
+<span class="line"><span style="color:#E1E4E8">{users.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">user</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">UserCard</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{user.id} </span><span style="color:#B392F0">name</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{user.name} /></span></span>
+<span class="line"><span style="color:#E1E4E8">))}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Bad — array index as key</span></span>
+<span class="line"><span style="color:#E1E4E8">{users.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">user</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">index</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">UserCard</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{index} </span><span style="color:#B392F0">name</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{user.name} /></span></span>
+<span class="line"><span style="color:#E1E4E8">))}</span></span></code></pre>
+<p><strong>Why array index is problematic:</strong></p>
+<ul>
+<li>If items are reordered, inserted, or deleted, the index shifts and React may reuse the wrong component instance, leading to stale state or broken animations.</li>
+</ul>
+<p><strong>Rules for good keys:</strong></p>
+<ul>
+<li>Use a <strong>unique, stable identifier</strong> from your data (database ID, slug, etc.).</li>
+<li>Keys must be unique <strong>among siblings</strong> (not globally).</li>
+<li>Never generate keys on the fly (e.g., <code>Math.random()</code>) — this defeats the purpose.</li>
+</ul>
+<blockquote>
+<p><strong>Tip:</strong> If your data has no natural ID, consider adding one at the data layer rather than relying on index.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#react</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>useMemo vs useCallback — when do you use them?</span> <span class="tag hard" data-astro-cid-r364hnea>hard</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>Both hooks <strong>memoize</strong> values between renders to avoid unnecessary work, but they serve different purposes.</p>
+<p><strong><code>useMemo</code></strong> — memoizes a <strong>computed value</strong>. The factory function only re-runs when its dependencies change.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> sorted</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> useMemo</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">  () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> items.</span><span style="color:#B392F0">sort</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">a</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">b</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> a.price </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> b.price),</span></span>
+<span class="line"><span style="color:#E1E4E8">  [items]</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<p><strong><code>useCallback</code></strong> — memoizes a <strong>function reference</strong>. Useful when passing callbacks to child components wrapped in <code>React.memo</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> handleClick</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> useCallback</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">  setCount</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">c</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> c </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}, []); </span><span style="color:#6A737D">// stable reference across renders</span></span></code></pre>
+<p><code>useCallback(fn, deps)</code> is essentially shorthand for <code>useMemo(() => fn, deps)</code>.</p>
+<p><strong>When to use them:</strong></p>
+<ul>
+<li>An expensive calculation runs on every render (use <code>useMemo</code>).</li>
+<li>A child component wrapped in <code>React.memo</code> receives a callback prop and re-renders unnecessarily (use <code>useCallback</code>).</li>
+<li>A value is used as a dependency in another hook and needs referential stability.</li>
+</ul>
+<p><strong>When NOT to use them:</strong></p>
+<ul>
+<li>The computation is cheap — memoization itself has overhead (memory + comparison).</li>
+<li>The component rarely re-renders anyway.</li>
+<li>You’re optimizing prematurely without measuring.</li>
+</ul>
+<blockquote>
+<p><strong>Rule of thumb:</strong> Write code without memoization first. Add <code>useMemo</code> / <code>useCallback</code> only when profiling reveals a real performance issue.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#react</span><span class="chip" data-astro-cid-r364hnea>#hooks</span><span class="chip" data-astro-cid-r364hnea>#performance</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What is the rules-of-hooks constraint?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>React hooks rely on a <strong>stable call order</strong> between renders. To guarantee this, React enforces two rules:</p>
+<p><strong>1. Only call hooks at the top level</strong></p>
+<p>Never call hooks inside loops, conditions, or nested functions. Every render must invoke the same hooks in the same order.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#6A737D">// Bad — conditional hook</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (loggedIn) {</span></span>
+<span class="line"><span style="color:#B392F0">  useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> { </span><span style="color:#6A737D">/* ... */</span><span style="color:#E1E4E8"> }); </span><span style="color:#6A737D">// breaks call order</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Good — condition inside the hook</span></span>
+<span class="line"><span style="color:#B392F0">useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (loggedIn) { </span><span style="color:#6A737D">/* ... */</span><span style="color:#E1E4E8"> }</span></span>
+<span class="line"><span style="color:#E1E4E8">}, [loggedIn]);</span></span></code></pre>
+<p><strong>2. Only call hooks from React functions</strong></p>
+<p>Hooks can only be called from:</p>
+<ul>
+<li><strong>Function components</strong></li>
+<li><strong>Custom hooks</strong> (functions whose name starts with <code>use</code>)</li>
+</ul>
+<p>They cannot be called from regular JavaScript functions, class components, or event handlers.</p>
+<p><strong>Why these rules exist:</strong></p>
+<p>React tracks hooks by their <strong>call index</strong> (first hook = index 0, second = index 1, etc.). If a hook is conditionally skipped, every subsequent hook shifts position and maps to the wrong state — causing subtle and hard-to-debug errors.</p>
+<blockquote>
+<p><strong>Tip:</strong> The <code>eslint-plugin-react-hooks</code> package (included in Create React App and Next.js) catches violations automatically.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#react</span><span class="chip" data-astro-cid-r364hnea>#hooks</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>How do you manage global state in React?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>There is no single “right” answer — the best approach depends on the <strong>type and frequency</strong> of the shared data.</p>
+<p><strong>Context API</strong> (built-in)</p>
+<p>Good for low-frequency, rarely-changing values like theme, locale, or auth status. Every consumer re-renders when the context value changes, so it is not ideal for rapidly updating state.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> ThemeCtx</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> createContext</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"light"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> App</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#79B8FF">ThemeCtx.Provider</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"dark"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#79B8FF">Page</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#79B8FF">ThemeCtx.Provider</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>Zustand / Redux / Jotai</strong> (external libraries)</p>
+<p>Better for larger, frequently-changing state. These libraries provide <strong>selectors</strong> so components only re-render when the specific slice of state they use changes.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// Zustand example</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> useStore</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> create</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">set</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ({</span></span>
+<span class="line"><span style="color:#E1E4E8">  count: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  increment</span><span style="color:#E1E4E8">: () </span><span style="color:#F97583">=></span><span style="color:#B392F0"> set</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">s</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ({ count: s.count </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8"> })),</span></span>
+<span class="line"><span style="color:#E1E4E8">}));</span></span></code></pre>
+<p><strong>React Query / TanStack Query</strong> (server state)</p>
+<p>Best for data fetched from APIs. Handles caching, background refetching, stale-while-revalidate, and error/loading states out of the box — keeping server state out of your global store.</p>
+<blockquote>
+<p><strong>Guideline:</strong> Start with local state (<code>useState</code>) and lift only when needed. Reach for Context for simple global values, a dedicated store for complex client state, and a data-fetching library for server state.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#react</span><span class="chip" data-astro-cid-r364hnea>#state-management</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What causes unnecessary re-renders and how do you prevent them?</span> <span class="tag hard" data-astro-cid-r364hnea>hard</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>A React component re-renders when:</p>
+<ol>
+<li>Its <strong>state</strong> changes.</li>
+<li>Its <strong>props</strong> change (by reference).</li>
+<li>Its <strong>parent re-renders</strong> (even if the child’s props are the same).</li>
+<li>A <strong>context</strong> it consumes changes.</li>
+</ol>
+<p>Most re-renders are fast and harmless, but they become a problem in large lists or computation-heavy components.</p>
+<p><strong>Prevention strategies:</strong></p>
+<p><strong><code>React.memo</code></strong> — wraps a component so it only re-renders when its props change (shallow comparison).</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> ExpensiveList</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> React.</span><span style="color:#B392F0">memo</span><span style="color:#E1E4E8">(({ </span><span style="color:#FFAB70">items</span><span style="color:#E1E4E8"> }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> items.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">item</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#79B8FF">Row</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{item.id} {</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">item} />);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p><strong><code>useCallback</code> / <code>useMemo</code></strong> — stabilize callback and object references passed as props so <code>React.memo</code> comparisons succeed.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> handleClick</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> useCallback</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> { </span><span style="color:#6A737D">/* ... */</span><span style="color:#E1E4E8"> }, []);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> config</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> useMemo</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ({ theme: </span><span style="color:#9ECBFF">"dark"</span><span style="color:#E1E4E8"> }), []);</span></span></code></pre>
+<p><strong>Component splitting</strong> — move state as close to where it’s used as possible. Only the component holding the state re-renders.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#6A737D">// Before: entire page re-renders on every keystroke</span></span>
+<span class="line"><span style="color:#6A737D">// After: only SearchInput re-renders</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> SearchInput</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">query</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setQuery</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{query} </span><span style="color:#B392F0">onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#FFAB70">e</span><span style="color:#F97583"> =></span><span style="color:#B392F0"> setQuery</span><span style="color:#E1E4E8">(e.target.value)} />;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>Store selectors</strong> — with Zustand or Redux, subscribe to specific slices so unrelated state changes don’t trigger a re-render.</p>
+<blockquote>
+<p><strong>Key principle:</strong> Profile first (React DevTools Profiler), optimize second. Premature memoization adds complexity without measurable benefit.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#react</span><span class="chip" data-astro-cid-r364hnea>#performance</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>CSR vs SSR vs SSG (and where does Next.js fit)?</span> <span class="tag hard" data-astro-cid-r364hnea>hard</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>These are three strategies for turning your components into HTML that the browser can display.</p>
+<p><strong>CSR (Client-Side Rendering)</strong></p>
+<p>The server sends a nearly empty HTML shell and a JavaScript bundle. The browser downloads, parses, and executes the JS to render the page. Good for highly interactive apps (dashboards), but the initial load can be slow and SEO is limited.</p>
+<p><strong>SSR (Server-Side Rendering)</strong></p>
+<p>The server renders the full HTML <strong>on every request</strong> and sends it to the browser. The page is visible immediately, then JS “hydrates” it to make it interactive. Great for SEO and dynamic, personalized pages, but every request hits the server.</p>
+<p><strong>SSG (Static Site Generation)</strong></p>
+<p>HTML is generated <strong>at build time</strong> and served from a CDN. Fastest possible load since there is no per-request work. Ideal for content that does not change often (blogs, docs, marketing pages).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>CSR</th><th>SSR</th><th>SSG</th></tr></thead><tbody><tr><td><strong>Rendered</strong></td><td>In the browser</td><td>On the server per request</td><td>At build time</td></tr><tr><td><strong>Time to first content</strong></td><td>Slow (JS must load)</td><td>Fast</td><td>Fastest</td></tr><tr><td><strong>SEO</strong></td><td>Poor (without extra work)</td><td>Good</td><td>Good</td></tr><tr><td><strong>Dynamic data</strong></td><td>Yes</td><td>Yes</td><td>Limited (rebuild needed)</td></tr></tbody></table>
+<p><strong>Where Next.js fits:</strong></p>
+<p>Next.js lets you choose the rendering strategy <strong>per route</strong>. A single app can mix SSG pages, SSR pages, and fully client-rendered components. It also supports <strong>ISR (Incremental Static Regeneration)</strong> — static pages that revalidate in the background after a set interval, combining the speed of SSG with fresher data.</p> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#react</span><span class="chip" data-astro-cid-r364hnea>#nextjs</span><span class="chip" data-astro-cid-r364hnea>#rendering</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>Flexbox vs Grid.</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>Both are CSS layout systems, but they solve different problems.</p>
+<p><strong>Flexbox</strong> is <strong>one-dimensional</strong> — it lays out items along a single axis (row or column). It excels at distributing space and aligning items within a line.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">.nav</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">flex</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  justify-content</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">space-between</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  align-items</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">center</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>Grid</strong> is <strong>two-dimensional</strong> — it controls both rows and columns simultaneously. It is ideal for page-level layouts and any design that needs alignment in both directions.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">.dashboard</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">grid</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  grid-template-columns</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">250</span><span style="color:#F97583">px</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583">fr</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  grid-template-rows</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">auto</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583">fr</span><span style="color:#79B8FF"> auto</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  gap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#F97583">rem</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Flexbox</th><th>Grid</th></tr></thead><tbody><tr><td><strong>Axes</strong></td><td>One (row or column)</td><td>Two (rows and columns)</td></tr><tr><td><strong>Best for</strong></td><td>Navbars, toolbars, card rows, centering</td><td>Page layouts, dashboards, galleries</td></tr><tr><td><strong>Content vs layout</strong></td><td>Content-driven (items size themselves)</td><td>Layout-driven (you define the grid, items fill it)</td></tr></tbody></table>
+<blockquote>
+<p><strong>In practice:</strong> You often use both. Grid for the overall page structure and Flexbox for component-level alignment within each grid cell.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#css</span><span class="chip" data-astro-cid-r364hnea>#layout</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>Explain the box model and box-sizing.</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>Every HTML element is a rectangular <strong>box</strong> made up of four layers (from inside out):</p>
+<ol>
+<li><strong>Content</strong> — the actual text, image, or child elements.</li>
+<li><strong>Padding</strong> — transparent space between the content and the border.</li>
+<li><strong>Border</strong> — the visible edge around the padding.</li>
+<li><strong>Margin</strong> — transparent space outside the border, separating the element from its neighbors.</li>
+</ol>
+<p><strong><code>box-sizing</code> property:</strong></p>
+<p>By default (<code>content-box</code>), <code>width</code> and <code>height</code> apply only to the content area. Padding and border are <strong>added on top</strong>, making the element larger than the declared size.</p>
+<p>With <code>border-box</code>, <code>width</code> and <code>height</code> include content + padding + border. This makes sizing far more predictable.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#6A737D">/* Apply border-box globally — recommended */</span></span>
+<span class="line"><span style="color:#85E89D">*</span><span style="color:#E1E4E8">, </span><span style="color:#85E89D">*</span><span style="color:#B392F0">::before</span><span style="color:#E1E4E8">, </span><span style="color:#85E89D">*</span><span style="color:#B392F0">::after</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  box-sizing</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">border-box</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">.card</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">300</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  padding</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">20</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  border</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#F97583">px</span><span style="color:#79B8FF"> solid</span><span style="color:#79B8FF"> #ccc</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#6A737D">  /* With border-box: total width is still 300px */</span></span>
+<span class="line"><span style="color:#6A737D">  /* With content-box: total width would be 300 + 40 + 4 = 344px */</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<blockquote>
+<p><strong>Best practice:</strong> Set <code>box-sizing: border-box</code> on all elements at the start of your stylesheet. Nearly every modern CSS reset or framework does this.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#css</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>How does CSS specificity work?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>When multiple CSS rules target the same element, the browser uses <strong>specificity</strong> to decide which rule wins. Specificity is calculated as a three-part score: <strong>(A, B, C)</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Level</th><th>What counts</th><th>Example</th></tr></thead><tbody><tr><td><strong>A — IDs</strong></td><td><code>#header</code></td><td>(1, 0, 0)</td></tr><tr><td><strong>B — Classes, attributes, pseudo-classes</strong></td><td><code>.nav</code>, <code>[type="text"]</code>, <code>:hover</code></td><td>(0, 1, 0)</td></tr><tr><td><strong>C — Elements, pseudo-elements</strong></td><td><code>div</code>, <code>::before</code></td><td>(0, 0, 1)</td></tr></tbody></table>
+<p><strong>Comparing specificity:</strong> A beats B beats C, regardless of count.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#6A737D">/* (0, 1, 0) — one class */</span></span>
+<span class="line"><span style="color:#B392F0">.button</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">blue</span><span style="color:#E1E4E8">; }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/* (1, 0, 0) — one ID (wins) */</span></span>
+<span class="line"><span style="color:#B392F0">#submit</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">red</span><span style="color:#E1E4E8">; }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/* (0, 0, 2) — two elements (loses to one class) */</span></span>
+<span class="line"><span style="color:#85E89D">div</span><span style="color:#85E89D"> button</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">green</span><span style="color:#E1E4E8">; }</span></span></code></pre>
+<p><strong>Tie-breaker:</strong> When two selectors have equal specificity, the <strong>later</strong> rule in the stylesheet wins.</p>
+<p><strong>Special cases:</strong></p>
+<ul>
+<li><strong>Inline styles</strong> (<code>style="..."</code>) override any selector-based rule.</li>
+<li><strong><code>!important</code></strong> overrides everything, including inline styles. Use it sparingly.</li>
+<li>The universal selector (<code>*</code>), combinators (<code>></code>, <code>+</code>, <code>~</code>), and <code>:where()</code> add <strong>zero</strong> specificity.</li>
+<li><code>:is()</code> and <code>:not()</code> take the specificity of their most specific argument.</li>
+</ul>
+<blockquote>
+<p><strong>Tip:</strong> Keep specificity low and flat. Prefer classes over IDs, avoid <code>!important</code>, and use a consistent naming convention (like BEM) to prevent specificity wars.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#css</span> </div> </div> </details>  </div> <script>
     document.getElementById('expand')?.addEventListener('click', () =>
       document.querySelectorAll('details.qa').forEach((d) => (d.open = true))
     );

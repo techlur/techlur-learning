@@ -11,7 +11,7 @@
 Get free consultation
 </a> </div> <!-- Mobile: theme toggle + hamburger --> <div class="mobile-actions"> <button class="theme-toggle" id="themeToggleMobile" aria-label="Toggle dark mode"> <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg> <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> <button class="mobile-menu-btn" aria-label="Open menu"> <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg> </button> </div> </div> </nav> </header> <!-- Mobile drawer --> <div class="mobile-backdrop"></div> <div class="mobile-drawer"> <div class="mobile-drawer-header"> <a href="/"> <img src="/images/techlur-logo.svg" alt="techlur logo" class="logo-light"> <img src="/images/techlur-logo-white.svg" alt="techlur logo" class="logo-dark"> </a> <button class="mobile-close-btn" aria-label="Close menu"> <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg> </button> </div> <a href="/backend" class="mobile-nav-link">Backend</a><a href="/frontend" class="mobile-nav-link">Frontend</a><a href="/database" class="mobile-nav-link">Database</a><a href="/ai" class="mobile-nav-link">AI &amp; LLMs</a><a href="/general" class="mobile-nav-link">General &amp; HR</a> <a href="https://techlursoftware.com/contact" target="_blank" rel="noopener" class="mobile-cta">
 Get free consultation
-</a> </div> <main>  <section class="head" data-astro-cid-a64eq3ge> <a class="back" href="/" data-astro-cid-a64eq3ge>&larr; all sections</a> <h1 data-astro-cid-a64eq3ge>Backend</h1> <p class="desc" data-astro-cid-a64eq3ge>HTTP fundamentals, Node.js, NestJS, auth, and APIs.</p> <div class="tools" data-astro-cid-a64eq3ge> <button id="expand" data-astro-cid-a64eq3ge>Expand all</button> <button id="collapse" data-astro-cid-a64eq3ge>Collapse all</button> <span class="n" data-astro-cid-a64eq3ge>3 questions</span> </div> </section> <div class="list" data-astro-cid-a64eq3ge> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What are the common HTTP methods and what is each used for?</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>HTTP methods (verbs) describe the action a client wants to perform on a resource.</p>
+</a> </div> <main>  <section class="head" data-astro-cid-a64eq3ge> <a class="back" href="/" data-astro-cid-a64eq3ge>&larr; all sections</a> <h1 data-astro-cid-a64eq3ge>Backend</h1> <p class="desc" data-astro-cid-a64eq3ge>HTTP fundamentals, Node.js, NestJS, auth, and APIs.</p> <div class="tools" data-astro-cid-a64eq3ge> <button id="expand" data-astro-cid-a64eq3ge>Expand all</button> <button id="collapse" data-astro-cid-a64eq3ge>Collapse all</button> <span class="n" data-astro-cid-a64eq3ge>20 questions</span> </div> </section> <div class="list" data-astro-cid-a64eq3ge> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What are the common HTTP methods and what is each used for?</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>HTTP methods (verbs) describe the action a client wants to perform on a resource.</p>
 <ul>
 <li><strong>GET</strong> — retrieve data; should never modify state (safe &#x26; idempotent).</li>
 <li><strong>POST</strong> — create a new resource; not idempotent (calling twice creates two records).</li>
@@ -22,7 +22,183 @@ Get free consultation
 </ul>
 <blockquote>
 <p><strong>Follow-up:</strong> “What does idempotent mean?” → Making the same request multiple times has the same effect as making it once.</p>
-</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#http</span><span class="chip" data-astro-cid-r364hnea>#rest</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What is a JWT and how is it used?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>A <strong>JSON Web Token</strong> is a compact, signed token with three dot-separated parts: <strong>Header.Payload.Signature</strong>.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#http</span><span class="chip" data-astro-cid-r364hnea>#rest</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>Map CRUD operations to HTTP methods.</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>CRUD is the set of four basic operations every persistent application needs. Each maps to an HTTP method:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CRUD Operation</th><th>HTTP Method</th><th>Example</th></tr></thead><tbody><tr><td><strong>Create</strong></td><td><code>POST</code></td><td><code>POST /users</code> — create a new user</td></tr><tr><td><strong>Read</strong></td><td><code>GET</code></td><td><code>GET /users/1</code> — fetch user with id 1</td></tr><tr><td><strong>Update</strong></td><td><code>PUT</code> / <code>PATCH</code></td><td><code>PUT /users/1</code> — replace user 1</td></tr><tr><td><strong>Delete</strong></td><td><code>DELETE</code></td><td><code>DELETE /users/1</code> — remove user 1</td></tr></tbody></table>
+<p><strong>PUT vs PATCH:</strong></p>
+<ul>
+<li><strong>PUT</strong> replaces the entire record. If you omit a field, it may be set to <code>null</code>.</li>
+<li><strong>PATCH</strong> updates only the fields you send; everything else stays the same.</li>
+</ul>
+<blockquote>
+<p><strong>Tip:</strong> In interviews, mentioning the PUT vs PATCH distinction shows you understand REST semantics beyond the basics.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#http</span><span class="chip" data-astro-cid-r364hnea>#rest</span><span class="chip" data-astro-cid-r364hnea>#crud</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>Describe the structure of an HTTP request and response.</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>Both HTTP requests and responses share a similar three-part structure: a <strong>start line</strong>, <strong>headers</strong>, and an optional <strong>body</strong>.</p>
+<p><strong>HTTP Request:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>POST /login HTTP/1.1</span></span>
+<span class="line"><span>Host: api.example.com</span></span>
+<span class="line"><span>Content-Type: application/json</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>{ "email": "user@example.com", "password": "s3cret" }</span></span></code></pre>
+<ul>
+<li><strong>Start line</strong> — method (<code>POST</code>), path (<code>/login</code>), and HTTP version.</li>
+<li><strong>Headers</strong> — key-value metadata like <code>Content-Type</code>, <code>Authorization</code>, <code>Accept</code>.</li>
+<li><strong>Body</strong> — the payload (JSON, form data, etc.). GET requests typically have no body.</li>
+</ul>
+<p><strong>HTTP Response:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>HTTP/1.1 200 OK</span></span>
+<span class="line"><span>Content-Type: application/json</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>{ "token": "eyJhbGciOi..." }</span></span></code></pre>
+<ul>
+<li><strong>Status line</strong> — HTTP version, status code (<code>200</code>), and reason phrase (<code>OK</code>).</li>
+<li><strong>Headers</strong> — <code>Content-Type</code>, <code>Set-Cookie</code>, <code>Cache-Control</code>, etc.</li>
+<li><strong>Body</strong> — the response payload (HTML, JSON, binary, etc.).</li>
+</ul>
+<blockquote>
+<p><strong>Remember:</strong> Headers are always plain text key-value pairs. The body is separated from the headers by a blank line.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#http</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>How can you transform a request or response before it reaches your handler?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>Most backend frameworks give you hooks to modify requests and responses at different stages. In <strong>NestJS</strong>, the three main tools are:</p>
+<ul>
+<li><strong>Middleware</strong> — runs first; has access to <code>req</code>, <code>res</code>, <code>next()</code>. Great for logging, body parsing, and setting headers.</li>
+<li><strong>Pipes</strong> — transform or validate the incoming data before it reaches the handler. For example, <code>ParseIntPipe</code> converts a string param to a number.</li>
+<li><strong>Interceptors</strong> — wrap the handler call, so they can transform both the request <em>and</em> the response. They use RxJS observables.</li>
+</ul>
+<p><strong>NestJS Interceptor example — adding a <code>timestamp</code> to every response:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#B392F0">Injectable</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> TimestampInterceptor</span><span style="color:#F97583"> implements</span><span style="color:#B392F0"> NestInterceptor</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">  intercept</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#F97583">:</span><span style="color:#B392F0"> ExecutionContext</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">next</span><span style="color:#F97583">:</span><span style="color:#B392F0"> CallHandler</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Observable</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">any</span><span style="color:#E1E4E8">> {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> next.</span><span style="color:#B392F0">handle</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">pipe</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#B392F0">      map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> ({</span></span>
+<span class="line"><span style="color:#F97583">        ...</span><span style="color:#E1E4E8">data,</span></span>
+<span class="line"><span style="color:#E1E4E8">        timestamp: </span><span style="color:#F97583">new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">toISOString</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">      })),</span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Apply it globally or per-controller:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#B392F0">UseInterceptors</span><span style="color:#E1E4E8">(TimestampInterceptor)</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#B392F0">Controller</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'users'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> UsersController</span><span style="color:#E1E4E8"> { </span><span style="color:#F97583">...</span><span style="color:#E1E4E8"> }</span></span></code></pre>
+<blockquote>
+<p><strong>Key point:</strong> The NestJS request lifecycle order is: Middleware → Guards → Interceptors (before) → Pipes → Handler → Interceptors (after) → Exception Filters.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#nestjs</span><span class="chip" data-astro-cid-r364hnea>#middleware</span><span class="chip" data-astro-cid-r364hnea>#interceptors</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What are HTTP status codes? Give the common ranges and examples.</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>HTTP status codes are three-digit numbers the server returns to tell the client what happened. They are grouped by the first digit:</p>
+<ul>
+<li><strong>1xx — Informational:</strong> <code>100 Continue</code>, <code>101 Switching Protocols</code>. Rarely used directly.</li>
+<li><strong>2xx — Success:</strong>
+<ul>
+<li><code>200 OK</code> — standard success.</li>
+<li><code>201 Created</code> — a new resource was created (common after POST).</li>
+<li><code>204 No Content</code> — success but nothing to return (common after DELETE).</li>
+</ul>
+</li>
+<li><strong>3xx — Redirection:</strong>
+<ul>
+<li><code>301 Moved Permanently</code> — resource has a new URL.</li>
+<li><code>304 Not Modified</code> — cached version is still valid.</li>
+</ul>
+</li>
+<li><strong>4xx — Client Error:</strong>
+<ul>
+<li><code>400 Bad Request</code> — malformed or invalid input.</li>
+<li><code>401 Unauthorized</code> — authentication required or failed.</li>
+<li><code>403 Forbidden</code> — authenticated but not allowed.</li>
+<li><code>404 Not Found</code> — resource does not exist.</li>
+<li><code>422 Unprocessable Entity</code> — validation error.</li>
+</ul>
+</li>
+<li><strong>5xx — Server Error:</strong>
+<ul>
+<li><code>500 Internal Server Error</code> — generic server failure.</li>
+<li><code>502 Bad Gateway</code> — upstream server returned an invalid response.</li>
+<li><code>503 Service Unavailable</code> — server is overloaded or under maintenance.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>401 vs 403:</strong> 401 means “I don’t know who you are” (missing or invalid credentials). 403 means “I know who you are, but you’re not allowed to do this.” Getting this distinction right matters in interviews.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#http</span><span class="chip" data-astro-cid-r364hnea>#rest</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>How do you create and maintain a session on the backend?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>There are two main approaches to maintaining user sessions: <strong>session-based</strong> (server-side) and <strong>token-based</strong> (client-side).</p>
+<p><strong>Session-Based Authentication:</strong></p>
+<ol>
+<li>User logs in with credentials.</li>
+<li>Server creates a session object and stores it (in memory, Redis, or a database).</li>
+<li>Server sends back a <strong>session ID</strong> in a <code>Set-Cookie</code> header.</li>
+<li>Browser automatically sends the cookie on every subsequent request.</li>
+<li>Server looks up the session ID to identify the user.</li>
+</ol>
+<p><strong>Token-Based Authentication (JWT):</strong></p>
+<ol>
+<li>User logs in with credentials.</li>
+<li>Server creates and signs a <strong>JWT</strong> containing user claims.</li>
+<li>Client stores the token (localStorage or httpOnly cookie) and sends it via <code>Authorization: Bearer &#x3C;token></code>.</li>
+<li>Server verifies the token signature — no server-side lookup needed.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Session Cookies</th><th>JWT</th></tr></thead><tbody><tr><td><strong>State</strong></td><td>Server-side (stateful)</td><td>Client-side (stateless)</td></tr><tr><td><strong>Storage</strong></td><td>Session store (Redis, DB)</td><td>Token stored by client</td></tr><tr><td><strong>Scalability</strong></td><td>Needs shared store across servers</td><td>Scales easily — no shared state</td></tr><tr><td><strong>Revocation</strong></td><td>Easy — delete the session</td><td>Hard — token valid until it expires</td></tr><tr><td><strong>Size</strong></td><td>Small cookie (just an ID)</td><td>Larger (carries payload)</td></tr></tbody></table>
+<blockquote>
+<p><strong>Best practice:</strong> For most web apps, use httpOnly, Secure, SameSite cookies for storing session identifiers or tokens. This mitigates XSS and CSRF risks compared to localStorage.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#auth</span><span class="chip" data-astro-cid-r364hnea>#sessions</span><span class="chip" data-astro-cid-r364hnea>#jwt</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What is a JWT and how is it used?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>A <strong>JSON Web Token</strong> is a compact, signed token with three dot-separated parts: <strong>Header.Payload.Signature</strong>.</p>
 <ul>
 <li><strong>Header</strong> — algorithm &#x26; token type.</li>
 <li><strong>Payload</strong> — claims like <code>userId</code>, <code>role</code>, <code>exp</code> (expiry). This is Base64-encoded, <em>not encrypted</em> — never put secrets here.</li>
@@ -43,7 +219,436 @@ Get free consultation
 <span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> req</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ctx.</span><span style="color:#B392F0">switchToHttp</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">getRequest</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#F97583">    return</span><span style="color:#B392F0"> Boolean</span><span style="color:#E1E4E8">(req.headers.authorization);</span></span>
 <span class="line"><span style="color:#E1E4E8">  }</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#nestjs</span><span class="chip" data-astro-cid-r364hnea>#express</span><span class="chip" data-astro-cid-r364hnea>#middleware</span> </div> </div> </details>  </div> <script>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#nestjs</span><span class="chip" data-astro-cid-r364hnea>#express</span><span class="chip" data-astro-cid-r364hnea>#middleware</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>How do you handle errors and error responses in a backend API?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>Good error handling keeps your API predictable and your users informed without leaking internals.</p>
+<p><strong>Key principles:</strong></p>
+<ul>
+<li><strong>Use a structured error shape</strong> — every error response should have a consistent format so clients can parse it reliably.</li>
+<li><strong>Use typed/named exceptions</strong> — throw specific errors (<code>NotFoundException</code>, <code>ValidationError</code>) rather than generic ones.</li>
+<li><strong>Never leak stack traces</strong> — in production, stack traces expose file paths and internal logic. Return a clean message and log the details server-side.</li>
+<li><strong>Use the right status code</strong> — 400 for bad input, 401/403 for auth issues, 404 for missing resources, 500 for unexpected failures.</li>
+</ul>
+<p><strong>Express error-handling middleware:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">app.</span><span style="color:#B392F0">use</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">err</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">req</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">res</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">next</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(err.stack); </span><span style="color:#6A737D">// log full error server-side</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  res.</span><span style="color:#B392F0">status</span><span style="color:#E1E4E8">(err.status </span><span style="color:#F97583">||</span><span style="color:#79B8FF"> 500</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">    error: {</span></span>
+<span class="line"><span style="color:#E1E4E8">      message: err.message </span><span style="color:#F97583">||</span><span style="color:#9ECBFF"> 'Internal Server Error'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      code: err.code </span><span style="color:#F97583">||</span><span style="color:#9ECBFF"> 'UNKNOWN_ERROR'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p><strong>NestJS exception filters:</strong></p>
+<p>NestJS has a built-in exception layer. You can throw typed exceptions and they are automatically mapped to responses:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#F97583">throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> NotFoundException</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'User not found'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">// → { statusCode: 404, message: "User not found" }</span></span></code></pre>
+<p>For custom shapes, create an exception filter:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#B392F0">Catch</span><span style="color:#E1E4E8">(HttpException)</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> HttpExceptionFilter</span><span style="color:#F97583"> implements</span><span style="color:#B392F0"> ExceptionFilter</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">  catch</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">exception</span><span style="color:#F97583">:</span><span style="color:#B392F0"> HttpException</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">host</span><span style="color:#F97583">:</span><span style="color:#B392F0"> ArgumentsHost</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> ctx</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> host.</span><span style="color:#B392F0">switchToHttp</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ctx.</span><span style="color:#B392F0">getResponse</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> status</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> exception.</span><span style="color:#B392F0">getStatus</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    response.</span><span style="color:#B392F0">status</span><span style="color:#E1E4E8">(status).</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">      success: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      error: exception.message,</span></span>
+<span class="line"><span style="color:#E1E4E8">      timestamp: </span><span style="color:#F97583">new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">toISOString</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<blockquote>
+<p><strong>Tip:</strong> Always validate input at the edge (with DTOs/pipes) so you can return a 400 before the error reaches your business logic.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#nestjs</span><span class="chip" data-astro-cid-r364hnea>#express</span><span class="chip" data-astro-cid-r364hnea>#errors</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What is CORS and why does it block requests?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p><strong>CORS (Cross-Origin Resource Sharing)</strong> is a browser security mechanism that restricts web pages from making requests to a different origin (domain, protocol, or port) than the one that served the page.</p>
+<p><strong>Why does it exist?</strong></p>
+<p>Without CORS, a malicious site could make requests to your bank’s API using your cookies — the browser would send them automatically. CORS prevents this by requiring the server to explicitly allow cross-origin access.</p>
+<p><strong>How it works:</strong></p>
+<ol>
+<li>The browser sends a request from <code>http://frontend.com</code> to <code>http://api.example.com</code>.</li>
+<li>If the origins differ, the browser checks for CORS headers in the response.</li>
+<li>For “non-simple” requests (PUT, DELETE, custom headers, JSON content-type), the browser first sends an <strong>OPTIONS preflight</strong> request asking “is this allowed?”</li>
+<li>The server responds with headers like <code>Access-Control-Allow-Origin</code>, <code>Access-Control-Allow-Methods</code>, and <code>Access-Control-Allow-Headers</code>.</li>
+<li>If the headers permit it, the browser proceeds with the actual request. Otherwise, it blocks it.</li>
+</ol>
+<p><strong>Key CORS headers:</strong></p>
+<ul>
+<li><code>Access-Control-Allow-Origin</code> — which origins are allowed (<code>*</code> for any, or a specific origin).</li>
+<li><code>Access-Control-Allow-Methods</code> — which HTTP methods are permitted.</li>
+<li><code>Access-Control-Allow-Headers</code> — which custom headers the client can send.</li>
+<li><code>Access-Control-Allow-Credentials</code> — whether cookies/auth headers are allowed (cannot use <code>*</code> for origin when this is <code>true</code>).</li>
+</ul>
+<p><strong>Fix on the server (Express example):</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> cors</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'cors'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">app.</span><span style="color:#B392F0">use</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">cors</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  origin: </span><span style="color:#9ECBFF">'https://frontend.com'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  methods: [</span><span style="color:#9ECBFF">'GET'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'PUT'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'DELETE'</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">  credentials: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">}));</span></span></code></pre>
+<blockquote>
+<p><strong>Remember:</strong> CORS is enforced by the <strong>browser</strong>, not the server. Server-to-server requests (e.g., from your backend to another API) are never blocked by CORS. If you see a CORS error, the fix is always on the server, not the client.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#cors</span><span class="chip" data-astro-cid-r364hnea>#security</span><span class="chip" data-astro-cid-r364hnea>#http</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>Is Node.js single-threaded? Explain the event loop.</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p><strong>Yes and no.</strong> Node.js runs your JavaScript on a <strong>single thread</strong>, but it delegates I/O operations (file reads, network calls, DNS lookups) to <strong>libuv</strong>, which maintains a thread pool (default 4 threads).</p>
+<p><strong>The Event Loop</strong> is the mechanism that coordinates this:</p>
+<ol>
+<li><strong>Timers</strong> — execute callbacks from <code>setTimeout</code> and <code>setInterval</code>.</li>
+<li><strong>Pending callbacks</strong> — I/O callbacks deferred from the previous cycle.</li>
+<li><strong>Poll</strong> — retrieve new I/O events; execute I/O-related callbacks. This is where Node spends most of its time.</li>
+<li><strong>Check</strong> — execute <code>setImmediate</code> callbacks.</li>
+<li><strong>Close callbacks</strong> — e.g., <code>socket.on('close', ...)</code>.</li>
+</ol>
+<p>Between each phase, Node processes the <strong>microtask queue</strong> (resolved Promises, <code>process.nextTick</code>).</p>
+<p><strong>Why does this matter?</strong></p>
+<ul>
+<li><strong>I/O is non-blocking</strong> — while one request waits for a database response, Node can handle other requests.</li>
+<li><strong>CPU-heavy work blocks the loop</strong> — a big <code>for</code> loop or image processing will freeze all other requests because there is only one JS thread.</li>
+</ul>
+<p><strong>How to handle CPU-heavy tasks:</strong></p>
+<ul>
+<li>Use <strong>Worker Threads</strong> (<code>worker_threads</code> module) to run code on a separate thread.</li>
+<li>Offload to a <strong>child process</strong> (<code>child_process.fork</code>).</li>
+<li>Use a <strong>job queue</strong> (Bull, BeeQueue) for background processing.</li>
+</ul>
+<blockquote>
+<p><strong>Key takeaway:</strong> Node.js is single-threaded for JavaScript execution but uses multiple threads under the hood for I/O. The event loop is what makes non-blocking async work possible.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#nodejs</span><span class="chip" data-astro-cid-r364hnea>#event-loop</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>Callbacks vs Promises vs async/await — what&#39;s the difference?</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>All three are ways to handle asynchronous operations in JavaScript. Each is an evolution of the previous.</p>
+<p><strong>Callbacks</strong> — a function passed as an argument, called when the async work completes. Works, but nesting multiple callbacks creates <strong>callback hell</strong> (deeply indented, hard-to-read code).</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">fs.</span><span style="color:#B392F0">readFile</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'a.txt'</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">err</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (err) </span><span style="color:#F97583">throw</span><span style="color:#E1E4E8"> err;</span></span>
+<span class="line"><span style="color:#E1E4E8">  fs.</span><span style="color:#B392F0">readFile</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'b.txt'</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">err</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">data2</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (err) </span><span style="color:#F97583">throw</span><span style="color:#E1E4E8"> err;</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(data, data2); </span><span style="color:#6A737D">// nested and messy</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p><strong>Promises</strong> — an object representing a future value. Chain <code>.then()</code> for success and <code>.catch()</code> for errors. Flattens the nesting.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#B392F0">readFilePromise</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'a.txt'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#F97583"> =></span><span style="color:#B392F0"> readFilePromise</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'b.txt'</span><span style="color:#E1E4E8">))</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data2</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(data2))</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">catch</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">err</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(err));</span></span></code></pre>
+<p><strong>async/await</strong> — syntactic sugar over Promises. Makes async code look and behave like synchronous code. Uses <code>try/catch</code> for error handling.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> readFiles</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> readFilePromise</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'a.txt'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> data2</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> readFilePromise</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'b.txt'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(data, data2);</span></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (err) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(err);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<blockquote>
+<p><strong>Tip:</strong> <code>async/await</code> is still using Promises under the hood — it’s not a different mechanism. Every <code>async</code> function returns a Promise, and <code>await</code> pauses execution until that Promise resolves.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#javascript</span><span class="chip" data-astro-cid-r364hnea>#async</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What is the difference between process.nextTick, microtasks, and setTimeout?</span> <span class="tag hard" data-astro-cid-r364hnea>hard</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>These three schedule callbacks at different points in the Node.js event loop, and their execution order is a common interview question.</p>
+<p><strong>Execution priority (highest to lowest):</strong></p>
+<ol>
+<li><strong><code>process.nextTick</code></strong> — fires immediately after the current operation, before <em>any</em> other I/O or timer. It is processed from the <strong>nextTick queue</strong>, which is drained completely before moving on.</li>
+<li><strong>Microtasks (Promise <code>.then</code>, <code>queueMicrotask</code>)</strong> — processed from the <strong>microtask queue</strong>, right after the nextTick queue is empty. These run between every phase of the event loop.</li>
+<li><strong><code>setTimeout(fn, 0)</code> / <code>setImmediate</code></strong> — these are <strong>macrotasks</strong>. <code>setTimeout</code> runs in the <strong>Timers</strong> phase; <code>setImmediate</code> runs in the <strong>Check</strong> phase.</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'1 - start'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">setTimeout</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'2 - setTimeout'</span><span style="color:#E1E4E8">), </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">Promise</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">resolve</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'3 - Promise'</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">process.</span><span style="color:#B392F0">nextTick</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'4 - nextTick'</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'5 - end'</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<p><strong>Output:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>1 - start</span></span>
+<span class="line"><span>5 - end</span></span>
+<span class="line"><span>4 - nextTick</span></span>
+<span class="line"><span>3 - Promise</span></span>
+<span class="line"><span>2 - setTimeout</span></span></code></pre>
+<p>Synchronous code runs first (<code>1</code>, <code>5</code>), then <code>process.nextTick</code> (<code>4</code>), then the microtask/Promise (<code>3</code>), and finally the macrotask/setTimeout (<code>2</code>).</p>
+<blockquote>
+<p><strong>Warning:</strong> Overusing <code>process.nextTick</code> can starve I/O because the nextTick queue is drained completely before the event loop continues. Prefer <code>setImmediate</code> or <code>queueMicrotask</code> unless you specifically need nextTick’s priority.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#nodejs</span><span class="chip" data-astro-cid-r364hnea>#event-loop</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What does module.exports vs require do, and how does ESM differ?</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>Node.js has two module systems: <strong>CommonJS (CJS)</strong> and <strong>ES Modules (ESM)</strong>.</p>
+<p><strong>CommonJS (the original Node.js way):</strong></p>
+<ul>
+<li><code>module.exports</code> — defines what a file exports.</li>
+<li><code>require()</code> — imports a module synchronously.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// math.js</span></span>
+<span class="line"><span style="color:#79B8FF">module</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">exports</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> { </span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">a</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">b</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> a </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> b };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// app.js</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> math</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'./math'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(math.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">)); </span><span style="color:#6A737D">// 5</span></span></code></pre>
+<p><strong>ES Modules (the modern standard):</strong></p>
+<ul>
+<li><code>export</code> / <code>export default</code> — defines exports.</li>
+<li><code>import</code> — imports a module. Statically analyzed and asynchronous.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// math.mjs</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#B392F0"> add</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">a</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">b</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> a </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> b;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// app.mjs</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { add } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './math.mjs'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">)); </span><span style="color:#6A737D">// 5</span></span></code></pre>
+<p><strong>Key differences:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>CommonJS</th><th>ES Modules</th></tr></thead><tbody><tr><td><strong>Syntax</strong></td><td><code>require()</code> / <code>module.exports</code></td><td><code>import</code> / <code>export</code></td></tr><tr><td><strong>Loading</strong></td><td>Synchronous</td><td>Asynchronous</td></tr><tr><td><strong>Parsing</strong></td><td>Dynamic (can require conditionally)</td><td>Static (imports hoisted to top)</td></tr><tr><td><strong>Tree-shaking</strong></td><td>Not possible</td><td>Supported (bundlers remove unused exports)</td></tr><tr><td><strong>File extension</strong></td><td><code>.js</code> (default)</td><td><code>.mjs</code> or <code>.js</code> with <code>"type": "module"</code> in <code>package.json</code></td></tr></tbody></table>
+<blockquote>
+<p><strong>Tip:</strong> To use ESM in Node.js, either name your files <code>.mjs</code> or add <code>"type": "module"</code> to your <code>package.json</code>. Most modern frameworks (including NestJS and Astro) use ESM by default.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#nodejs</span><span class="chip" data-astro-cid-r364hnea>#modules</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>Explain the core building blocks of NestJS.</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>NestJS organizes applications around a set of core building blocks, each with a specific responsibility:</p>
+<ul>
+<li><strong>Module</strong> (<code>@Module</code>) — a class that groups related controllers and providers. Every app has at least a root <code>AppModule</code>. Modules can import other modules.</li>
+<li><strong>Controller</strong> (<code>@Controller</code>) — handles incoming HTTP requests and returns responses. Defines routes with decorators like <code>@Get()</code>, <code>@Post()</code>, etc.</li>
+<li><strong>Provider / Service</strong> (<code>@Injectable</code>) — contains business logic. Services are injected into controllers via dependency injection.</li>
+<li><strong>Pipe</strong> — transforms or validates input data before it reaches the handler. Example: <code>ValidationPipe</code> validates DTOs, <code>ParseIntPipe</code> converts strings to numbers.</li>
+<li><strong>Guard</strong> (<code>@Injectable</code>, implements <code>CanActivate</code>) — determines whether a request is allowed to proceed. Used for authentication and authorization.</li>
+<li><strong>Interceptor</strong> (<code>@Injectable</code>, implements <code>NestInterceptor</code>) — wraps the handler execution. Can transform the response, add logging, or cache results.</li>
+<li><strong>Exception Filter</strong> (<code>@Catch</code>) — catches thrown exceptions and converts them into HTTP responses.</li>
+</ul>
+<p><strong>Request lifecycle order:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Incoming Request</span></span>
+<span class="line"><span>  → Middleware</span></span>
+<span class="line"><span>    → Guards</span></span>
+<span class="line"><span>      → Interceptors (before)</span></span>
+<span class="line"><span>        → Pipes</span></span>
+<span class="line"><span>          → Route Handler</span></span>
+<span class="line"><span>        → Interceptors (after)</span></span>
+<span class="line"><span>      → Exception Filters (if error)</span></span>
+<span class="line"><span>  → Response</span></span></code></pre>
+<blockquote>
+<p><strong>Key insight:</strong> Each building block has a single responsibility. Guards only decide yes/no, Pipes only validate/transform data, Interceptors wrap the handler. This separation makes NestJS apps testable and maintainable.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#nestjs</span><span class="chip" data-astro-cid-r364hnea>#architecture</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What is Dependency Injection and why does NestJS use it?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p><strong>Dependency Injection (DI)</strong> is a design pattern where a class receives its dependencies from the outside rather than creating them itself. An <strong>IoC (Inversion of Control) container</strong> manages the creation and lifetime of these dependencies.</p>
+<p><strong>Without DI (tightly coupled):</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> UserController</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  private</span><span style="color:#FFAB70"> userService</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserService</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// creates its own dependency</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>With DI (loosely coupled):</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#B392F0">Controller</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'users'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> UserController</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  constructor</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">private</span><span style="color:#F97583"> readonly</span><span style="color:#FFAB70"> userService</span><span style="color:#F97583">:</span><span style="color:#B392F0"> UserService</span><span style="color:#E1E4E8">) {}</span></span>
+<span class="line"><span style="color:#6A737D">  // NestJS injects UserService automatically</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>Why NestJS uses DI:</strong></p>
+<ul>
+<li><strong>Loose coupling</strong> — classes depend on abstractions, not concrete implementations. You can swap a <code>DatabaseService</code> for a <code>MockDatabaseService</code> without changing the controller.</li>
+<li><strong>Testability</strong> — in unit tests, you inject mock or stub services instead of real ones.</li>
+<li><strong>Single responsibility</strong> — each service handles one concern; the container wires them together.</li>
+<li><strong>Lifecycle management</strong> — the container controls whether a service is a singleton (default in NestJS), request-scoped, or transient.</li>
+</ul>
+<p><strong>How it works in NestJS:</strong></p>
+<ol>
+<li>Mark a class as injectable with <code>@Injectable()</code>.</li>
+<li>Register it in a module’s <code>providers</code> array.</li>
+<li>Declare it as a constructor parameter wherever you need it.</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#B392F0">Injectable</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> UserService</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">  findAll</span><span style="color:#E1E4E8">() { </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">'Alice'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'Bob'</span><span style="color:#E1E4E8">]; }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#B392F0">Module</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  controllers: [UserController],</span></span>
+<span class="line"><span style="color:#E1E4E8">  providers: [UserService],</span></span>
+<span class="line"><span style="color:#E1E4E8">})</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> UserModule</span><span style="color:#E1E4E8"> {}</span></span></code></pre>
+<blockquote>
+<p><strong>Tip:</strong> If an interviewer asks “what is IoC?” — it is the principle that the framework controls object creation and lifecycle, not your code. DI is the most common way to implement IoC.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#nestjs</span><span class="chip" data-astro-cid-r364hnea>#di</span><span class="chip" data-astro-cid-r364hnea>#architecture</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What is a DTO and why use class-validator?</span> <span class="tag easy" data-astro-cid-r364hnea>easy</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>A <strong>DTO (Data Transfer Object)</strong> is a plain class that defines the shape of data coming into or going out of your API. It does not contain business logic — it is purely a data contract.</p>
+<p><strong>Why use DTOs?</strong></p>
+<ul>
+<li><strong>Validation</strong> — ensure incoming data matches the expected shape before it reaches your service.</li>
+<li><strong>Documentation</strong> — the DTO clearly shows what fields an endpoint expects.</li>
+<li><strong>Type safety</strong> — TypeScript catches mismatches at compile time.</li>
+</ul>
+<p><strong>class-validator</strong> is a library that uses decorators to define validation rules on DTO properties. Paired with NestJS’s <code>ValidationPipe</code>, invalid requests are automatically rejected with a 400 error.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { IsEmail, IsString, MinLength } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'class-validator'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> CreateUserDto</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  @</span><span style="color:#B392F0">IsString</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">  @</span><span style="color:#B392F0">MinLength</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#FFAB70">  name</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  @</span><span style="color:#B392F0">IsEmail</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#FFAB70">  email</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  @</span><span style="color:#B392F0">IsString</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">  @</span><span style="color:#B392F0">MinLength</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#FFAB70">  password</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>Using it in a controller:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#B392F0">Post</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#B392F0">create</span><span style="color:#E1E4E8">(@</span><span style="color:#B392F0">Body</span><span style="color:#E1E4E8">() dto: CreateUserDto) {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.userService.</span><span style="color:#B392F0">create</span><span style="color:#E1E4E8">(dto);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>Enable <code>ValidationPipe</code> globally in <code>main.ts</code>:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#E1E4E8">app.</span><span style="color:#B392F0">useGlobalPipes</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">new</span><span style="color:#B392F0"> ValidationPipe</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  whitelist: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,       </span><span style="color:#6A737D">// strip unknown properties</span></span>
+<span class="line"><span style="color:#E1E4E8">  forbidNonWhitelisted: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// throw if unknown properties are sent</span></span>
+<span class="line"><span style="color:#E1E4E8">  transform: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,       </span><span style="color:#6A737D">// auto-transform payloads to DTO instances</span></span>
+<span class="line"><span style="color:#E1E4E8">}));</span></span></code></pre>
+<blockquote>
+<p><strong>Tip:</strong> Always enable <code>whitelist: true</code> to strip unexpected fields. This prevents users from injecting extra properties (like <code>isAdmin: true</code>) into your database.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#nestjs</span><span class="chip" data-astro-cid-r364hnea>#validation</span><span class="chip" data-astro-cid-r364hnea>#dto</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>What makes an API RESTful?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p><strong>REST (Representational State Transfer)</strong> is an architectural style for designing networked APIs. An API is considered RESTful when it follows these principles:</p>
+<ul>
+<li><strong>Stateless</strong> — every request contains all the information the server needs. The server does not store client session state between requests.</li>
+<li><strong>Resource-based URLs</strong> — endpoints represent resources (nouns), not actions (verbs). Use <code>/users/5</code> instead of <code>/getUser?id=5</code>.</li>
+<li><strong>Correct HTTP methods</strong> — use GET to read, POST to create, PUT/PATCH to update, DELETE to remove.</li>
+<li><strong>Proper status codes</strong> — return 201 for creation, 404 for not found, 400 for bad input, etc.</li>
+<li><strong>Uniform interface</strong> — consistent URL patterns, predictable request/response formats (usually JSON).</li>
+<li><strong>Client-server separation</strong> — the client and server are independent; the client only knows the API contract.</li>
+</ul>
+<p><strong>Good REST design:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>GET    /users          → list all users</span></span>
+<span class="line"><span>GET    /users/42       → get user 42</span></span>
+<span class="line"><span>POST   /users          → create a new user</span></span>
+<span class="line"><span>PUT    /users/42       → replace user 42</span></span>
+<span class="line"><span>PATCH  /users/42       → partially update user 42</span></span>
+<span class="line"><span>DELETE /users/42       → delete user 42</span></span>
+<span class="line"><span>GET    /users/42/posts → list posts by user 42</span></span></code></pre>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li>Using verbs in URLs: <code>/getUsers</code>, <code>/deleteUser/42</code></li>
+<li>Using POST for everything</li>
+<li>Returning 200 for errors with an error message in the body</li>
+<li>Not using plural nouns for collections (<code>/user</code> vs <code>/users</code>)</li>
+</ul>
+<blockquote>
+<p><strong>Interview tip:</strong> REST is a set of guidelines, not a strict specification. In practice, very few APIs are “purely” RESTful — what matters is consistent, predictable conventions that your team agrees on.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#rest</span><span class="chip" data-astro-cid-r364hnea>#api</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>REST vs GraphQL — when would you choose each?</span> <span class="tag medium" data-astro-cid-r364hnea>medium</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>REST and GraphQL are two approaches to building APIs. Each has trade-offs.</p>
+<p><strong>REST:</strong></p>
+<ul>
+<li>Multiple endpoints, one per resource (<code>/users</code>, <code>/posts</code>, <code>/comments</code>).</li>
+<li>The server decides what data to return for each endpoint.</li>
+<li>Simple HTTP caching with <code>Cache-Control</code>, <code>ETag</code>, etc.</li>
+<li>Can lead to <strong>over-fetching</strong> (getting more fields than you need) or <strong>under-fetching</strong> (needing multiple requests to assemble a view).</li>
+</ul>
+<p><strong>GraphQL:</strong></p>
+<ul>
+<li>A <strong>single endpoint</strong> (typically <code>/graphql</code>).</li>
+<li>The client sends a <strong>query</strong> specifying exactly which fields it needs.</li>
+<li>No over-fetching or under-fetching — the response shape matches the query.</li>
+<li>Built-in schema and type system for self-documentation.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>REST</th><th>GraphQL</th></tr></thead><tbody><tr><td><strong>Endpoints</strong></td><td>Many (one per resource)</td><td>Single (<code>/graphql</code>)</td></tr><tr><td><strong>Data shape</strong></td><td>Server decides</td><td>Client decides</td></tr><tr><td><strong>Caching</strong></td><td>Easy (HTTP-level)</td><td>Harder (needs client-side cache like Apollo)</td></tr><tr><td><strong>Learning curve</strong></td><td>Lower</td><td>Higher (schema, resolvers, query language)</td></tr><tr><td><strong>File uploads</strong></td><td>Straightforward</td><td>Requires extra setup</td></tr><tr><td><strong>Real-time</strong></td><td>Polling or WebSockets</td><td>Subscriptions built in</td></tr></tbody></table>
+<p><strong>When to choose REST:</strong></p>
+<ul>
+<li>Simple CRUD applications with predictable data needs.</li>
+<li>When HTTP caching is important.</li>
+<li>When the team is more familiar with REST patterns.</li>
+</ul>
+<p><strong>When to choose GraphQL:</strong></p>
+<ul>
+<li>Complex frontends that need different slices of data on different screens.</li>
+<li>Mobile apps where minimizing payload size matters.</li>
+<li>When you have many related resources and want to avoid multiple round trips.</li>
+</ul>
+<blockquote>
+<p><strong>Tip:</strong> They are not mutually exclusive. Some teams use REST for simple CRUD and add a GraphQL layer for complex, relationship-heavy queries.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#rest</span><span class="chip" data-astro-cid-r364hnea>#graphql</span><span class="chip" data-astro-cid-r364hnea>#api</span> </div> </div> </details> <details class="qa" data-astro-cid-r364hnea> <summary data-astro-cid-r364hnea> <span class="qmark" data-astro-cid-r364hnea>Q.</span> <span class="qtext" data-astro-cid-r364hnea>How do you secure a backend application? (name several)</span> <span class="tag hard" data-astro-cid-r364hnea>hard</span> <span class="arrow" data-astro-cid-r364hnea>&rsaquo;</span> </summary> <div class="answer" data-astro-cid-r364hnea> <p>Backend security is not a single feature — it is a layered approach. Here are the essential practices:</p>
+<p><strong>Authentication &#x26; Passwords:</strong></p>
+<ul>
+<li><strong>Hash passwords with bcrypt</strong> (or Argon2) — never store plain text. bcrypt includes a salt and is intentionally slow to resist brute-force attacks.</li>
+<li>Use <strong>JWT or session cookies</strong> for auth. Prefer httpOnly, Secure, SameSite cookies to reduce XSS and CSRF risk.</li>
+</ul>
+<p><strong>Input Validation:</strong></p>
+<ul>
+<li><strong>Validate and sanitize all input</strong> — never trust data from the client. Use a validation library (class-validator, Joi, Zod) at the API boundary.</li>
+<li><strong>Parameterized queries</strong> (prepared statements) — prevent SQL injection. Never concatenate user input into SQL strings.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// BAD — SQL injection risk</span></span>
+<span class="line"><span style="color:#E1E4E8">db.</span><span style="color:#B392F0">query</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`SELECT * FROM users WHERE id = ${</span><span style="color:#E1E4E8">req</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">params</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">id</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// GOOD — parameterized query</span></span>
+<span class="line"><span style="color:#E1E4E8">db.</span><span style="color:#B392F0">query</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'SELECT * FROM users WHERE id = $1'</span><span style="color:#E1E4E8">, [req.params.id]);</span></span></code></pre>
+<p><strong>Transport &#x26; Headers:</strong></p>
+<ul>
+<li><strong>HTTPS everywhere</strong> — encrypt data in transit. Redirect HTTP to HTTPS.</li>
+<li><strong>Use helmet</strong> (Express middleware) — sets security headers like <code>X-Content-Type-Options</code>, <code>Strict-Transport-Security</code>, <code>X-Frame-Options</code>.</li>
+<li><strong>CORS configuration</strong> — only allow trusted origins.</li>
+</ul>
+<p><strong>Rate Limiting &#x26; Abuse Prevention:</strong></p>
+<ul>
+<li><strong>Rate-limit endpoints</strong> — prevent brute-force login attempts and DDoS. Use libraries like <code>express-rate-limit</code> or <code>@nestjs/throttler</code>.</li>
+<li><strong>Limit payload size</strong> — prevent large request body attacks.</li>
+</ul>
+<p><strong>Other Important Measures:</strong></p>
+<ul>
+<li><strong>Principle of least privilege</strong> — give services and database users only the permissions they need.</li>
+<li><strong>Keep dependencies updated</strong> — run <code>npm audit</code> regularly to catch known vulnerabilities.</li>
+<li><strong>Never expose stack traces</strong> in production — return generic error messages and log details server-side.</li>
+<li><strong>Environment variables</strong> — store secrets (API keys, DB passwords) in environment variables, never in code.</li>
+</ul>
+<blockquote>
+<p><strong>Remember:</strong> Security is defense in depth. No single measure is enough. Combining multiple layers — hashing, validation, HTTPS, rate-limiting, least privilege — makes your application resilient against different attack vectors.</p>
+</blockquote> <div class="tags" data-astro-cid-r364hnea> <span class="chip" data-astro-cid-r364hnea>#security</span><span class="chip" data-astro-cid-r364hnea>#auth</span> </div> </div> </details>  </div> <script>
     document.getElementById('expand')?.addEventListener('click', () =>
       document.querySelectorAll('details.qa').forEach((d) => (d.open = true))
     );
