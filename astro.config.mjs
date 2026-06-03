@@ -1,11 +1,10 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  // Set this to your deployed URL (e.g. https://yourname.github.io) before building for prod.
-  // For GitHub Pages project sites, also set `base: '/your-repo-name'`.
-  site: 'https://example.com',
-  integrations: [react()],
+  site: 'https://learn.techlursoftware.com',
+  integrations: [react(), sitemap()],
 });

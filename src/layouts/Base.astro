@@ -2,8 +2,25 @@
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  ogType?: string;
+  canonicalPath?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
-const { title, description = 'Community-driven web development interview prep.' } = Astro.props;
+const {
+  title,
+  description = 'Community-driven web development interview prep.',
+  ogImage = '/images/og-cover.png',
+  ogType = 'website',
+  canonicalPath,
+  jsonLd,
+} = Astro.props;
+
+const siteUrl = 'https://learn.techlursoftware.com';
+const canonicalUrl = canonicalPath ? `${siteUrl}${canonicalPath}` : undefined;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
 const navLinks = [
   { id: 'backend', label: 'Backend' },
   { id: 'frontend', label: 'Frontend' },
@@ -34,8 +51,37 @@ const footerCompany = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#12aa5b" />
     <title>{title}</title>
     <link rel="icon" href="/favicon.ico" />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:site_name" content="Techlur Learning" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- JSON-LD Structured Data -->
+    {jsonLdArray.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -56,7 +102,7 @@ const footerCompany = [
   <body>
     <!-- Header -->
     <header class="site-header">
-      <nav class="header-container">
+      <nav class="header-container" aria-label="Main navigation">
         <div class="header-inner">
           <a href="/" class="logo-link">
             <img src="/images/techlur-logo.svg" alt="techlur logo" class="logo-img logo-light" />

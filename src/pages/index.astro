@@ -16,27 +16,106 @@ const sections = [
 }));
 
 const total = all.length;
+
+const seoDescription = `${total} web development interview questions with model answers across backend, frontend, database, AI, and general topics. Free, open-source interview prep for freshers and junior developers.`;
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Techlur Learning',
+  url: 'https://learn.techlursoftware.com',
+  description: seoDescription,
+  publisher: {
+    '@type': 'Organization',
+    name: 'Techlur Software Private Limited',
+    url: 'https://techlursoftware.com',
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://learn.techlursoftware.com/{section}',
+    'query-input': 'required name=section',
+  },
+};
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Techlur Software Private Limited',
+  url: 'https://techlursoftware.com',
+  logo: 'https://learn.techlursoftware.com/images/techlur-logo.svg',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'info@techlursoftware.com',
+    telephone: '+91-7668325180',
+    contactType: 'customer support',
+  },
+  sameAs: [
+    'https://www.facebook.com/techlursoftware/',
+    'https://www.linkedin.com/company/techlur/',
+  ],
+};
 ---
 
-<Base title="Techlur Learning — Web Development Interview Prep">
+<Base
+  title="Techlur Learning — Web Development Interview Prep"
+  description={seoDescription}
+  canonicalPath="/"
+  jsonLd={[websiteSchema, orgSchema]}
+>
   <section class="hero">
     <p class="eyebrow">// open-source &middot; community-driven</p>
-    <h1>The Developer's <em>Interview</em> Playbook</h1>
+    <h1>Ace Your Next <em>Developer</em> Interview</h1>
     <p class="sub">
-      A community-built bank of web development interview questions with model
-      answers — for Node.js / NestJS &middot; React &middot; MySQL aspirants. Add yours via a
-      Markdown pull request.
+      Practice real interview questions with model answers — covering Node.js,
+      React, MySQL, AI, and more. Built by the community, for freshers and
+      junior developers.
     </p>
-    <p class="stat"><strong>{total}</strong> questions and growing</p>
+
+    <!-- Proof bar -->
+    <div class="proof-bar">
+      <div class="proof-item">
+        <strong>{total}+</strong>
+        <span>Questions</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <strong>5</strong>
+        <span>Topic areas</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <strong>100%</strong>
+        <span>Model answers</span>
+      </div>
+    </div>
+
+    <!-- Value props -->
+    <ul class="value-props">
+      <li>
+        <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+        Reviewed by working developers
+      </li>
+      <li>
+        <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+        Covers real fresher interview topics
+      </li>
+      <li>
+        <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+        Open-source — contribute via pull request
+      </li>
+    </ul>
+
+    <!-- CTA -->
+    <a href="#sections" class="cta-primary">Start Practicing</a>
   </section>
 
-  <div class="grid">
+  <div class="grid" id="sections">
     {sections.map((s) => (
       <a href={`/${s.id}`} class="card">
         <span class="count">{s.count} Q</span>
         <h2>{s.label}</h2>
         <p>{s.desc}</p>
-        <span class="go">Browse &rarr;</span>
+        <span class="go">Start practicing &rarr;</span>
       </a>
     ))}
   </div>
@@ -71,15 +150,85 @@ const total = all.length;
       color: var(--color-gray-400);
       line-height: 1.6;
     }
-    .stat {
-      margin-top: 18px;
-      font-family: 'JetBrains Mono', ui-monospace, monospace;
-      font-size: 14px;
-      color: var(--color-primary);
+
+    /* Proof bar */
+    .proof-bar {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 28px;
+      padding: 16px 24px;
+      background: var(--color-primary-50);
+      border: 1px solid rgba(18, 170, 91, 0.15);
+      border-radius: 12px;
     }
-    .stat strong {
+    .proof-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      flex: 1;
+      text-align: center;
+    }
+    .proof-item strong {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 22px;
+      font-weight: 700;
       color: var(--color-accent-dark);
-      font-size: 18px;
+    }
+    .proof-item span {
+      font-size: 13px;
+      color: var(--color-gray-500);
+    }
+    .proof-divider {
+      width: 1px;
+      height: 32px;
+      background: rgba(18, 170, 91, 0.2);
+      flex-shrink: 0;
+    }
+
+    /* Value props */
+    .value-props {
+      list-style: none;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .value-props li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--color-gray-500);
+    }
+    .check-icon {
+      width: 18px;
+      height: 18px;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    /* CTA button */
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 28px;
+      padding: 14px 36px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      background: var(--gradient-accent);
+      border-radius: 9999px;
+      box-shadow: var(--shadow-gray);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .cta-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-green);
+      color: #fff;
     }
 
     .grid {
@@ -132,6 +281,15 @@ const total = all.length;
     /* Dark mode */
     :global(.dark) h1 { color: #f9fafb; }
     :global(.dark) .sub { color: #9ca3af; }
+    :global(.dark) .proof-bar {
+      background: rgba(18, 170, 91, 0.08);
+      border-color: rgba(18, 170, 91, 0.2);
+    }
+    :global(.dark) .proof-item strong { color: var(--color-accent); }
+    :global(.dark) .proof-item span { color: #9ca3af; }
+    :global(.dark) .proof-divider { background: rgba(18, 170, 91, 0.3); }
+    :global(.dark) .value-props li { color: #d1d5db; }
+    :global(.dark) .cta-primary { color: #fff; }
     :global(.dark) .card {
       background: var(--color-dark-card);
       border-color: var(--color-dark-border);

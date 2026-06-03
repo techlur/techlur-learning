@@ -21,22 +21,66 @@ export async function getStaticPaths() {
       .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
     return {
       params: { section: id },
-      props: { questions, meta: meta[id] ?? { label: id, desc: '' } },
+      props: { questions, meta: meta[id] ?? { label: id, desc: '' }, sectionId: id },
     };
   });
 }
 
-const { questions, meta } = Astro.props;
+const { questions, meta, sectionId } = Astro.props;
+
+const seoDescription = `${questions.length} ${meta.label.toLowerCase()} interview questions with model answers. ${meta.desc} Free prep for freshers and junior developers.`;
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: questions.map((q: any) => ({
+    '@type': 'Question',
+    name: q.data.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: q.body?.slice(0, 500) || meta.desc,
+    },
+  })),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://learn.techlursoftware.com/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: meta.label,
+      item: `https://learn.techlursoftware.com/${sectionId}`,
+    },
+  ],
+};
 ---
 
-<Base title={`${meta.label} — Interview Prep`} description={meta.desc}>
+<Base
+  title={`${meta.label} — Interview Prep`}
+  description={seoDescription}
+  canonicalPath={`/${sectionId}`}
+  jsonLd={[faqSchema, breadcrumbSchema]}
+>
   <section class="head">
-    <a class="back" href="/">&larr; all sections</a>
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">{meta.label}</li>
+      </ol>
+    </nav>
     <h1>{meta.label}</h1>
     <p class="desc">{meta.desc}</p>
     <div class="tools">
-      <button id="expand">Expand all</button>
-      <button id="collapse">Collapse all</button>
+      <button id="expand" aria-label="Expand all questions">Expand all</button>
+      <button id="collapse" aria-label="Collapse all questions">Collapse all</button>
       <span class="n">{questions.length} questions</span>
     </div>
   </section>
@@ -57,17 +101,40 @@ const { questions, meta } = Astro.props;
   <style>
     .head { padding: 40px 0 24px; }
     @media (min-width: 768px) { .head { padding: 50px 0 28px; } }
-    @media (min-width: 1024px) { .head { padding: 90px 0 32px; } }
+    @media (min-width: 1024px) { .head { padding: 70px 0 32px; } }
 
-    .back {
+    /* Breadcrumb */
+    .breadcrumb ol {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0;
+      margin: 0 0 12px;
       font-family: 'JetBrains Mono', ui-monospace, monospace;
       font-size: 13px;
-      font-weight: 500;
+    }
+    .breadcrumb li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .breadcrumb li + li::before {
+      content: '/';
+      color: var(--color-gray-400);
+    }
+    .breadcrumb a {
       text-decoration: none;
       color: var(--color-primary);
+      font-weight: 500;
       transition: color 0.15s;
     }
-    .back:hover { color: var(--color-accent-dark); }
+    .breadcrumb a:hover {
+      color: var(--color-accent-dark);
+    }
+    .breadcrumb li[aria-current="page"] {
+      color: var(--color-gray-500);
+    }
 
     h1 {
       font-weight: 700;
@@ -122,6 +189,10 @@ const { questions, meta } = Astro.props;
     /* Dark mode */
     :global(.dark) h1 { color: #f9fafb; }
     :global(.dark) .desc { color: #9ca3af; }
+    :global(.dark) .breadcrumb a { color: var(--color-primary); }
+    :global(.dark) .breadcrumb a:hover { color: var(--color-accent-light); }
+    :global(.dark) .breadcrumb li[aria-current="page"] { color: #9ca3af; }
+    :global(.dark) .breadcrumb li + li::before { color: #6b7280; }
     :global(.dark) .tools button {
       background: var(--color-dark-card);
       border-color: var(--color-dark-border);
