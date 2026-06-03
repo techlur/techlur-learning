@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import QuestionCard from '../components/QuestionCard.astro';
+
+export async function getStaticPaths() {
+  const all = await getCollection('questions');
+  const meta: Record<string, { label: string; desc: string }> = {
+    backend: { label: 'Backend', desc: 'HTTP fundamentals, Node.js, NestJS, auth, and APIs.' },
+    frontend: { label: 'Frontend', desc: 'JavaScript core, the browser, React, and CSS.' },
+    database: { label: 'Database', desc: 'MySQL, SQL queries, modelling, and indexing.' },
+    ai: { label: 'AI & LLMs', desc: 'Core concepts, RAG, calling APIs, and prompting.' },
+    general: { label: 'General & HR', desc: 'Git, DSA, OOP, and behavioural rounds.' },
+  };
+
+  const ids = [...new Set(all.map((q) => q.data.section))];
+
+  return ids.map((id) => {
+    const questions = all
+      .filter((q) => q.data.section === id)
+      .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
+    return {
+      params: { section: id },
+      props: { questions, meta: meta[id] ?? { label: id, desc: '' } },
+    };
+  });
+}
+
+const { questions, meta } = Astro.props;
+---
+
+<Base title={`${meta.label} — Interview Prep`} description={meta.desc}>
+  <section class="head">
+    <a class="back" href="/">← all sections</a>
+    <h1>{meta.label}</h1>
+    <p class="desc">{meta.desc}</p>
+    <div class="tools">
+      <button id="expand">Expand all</button>
+      <button id="collapse">Collapse all</button>
+      <span class="n">{questions.length} questions</span>
+    </div>
+  </section>
+
+  <div class="list">
+    {questions.map((entry) => <QuestionCard entry={entry} />)}
+  </div>
+
+  <script is:inline>
+    document.getElementById('expand')?.addEventListener('click', () =>
+      document.querySelectorAll('details.qa').forEach((d) => (d.open = true))
+    );
+    document.getElementById('collapse')?.addEventListener('click', () =>
+      document.querySelectorAll('details.qa').forEach((d) => (d.open = false))
+    );
+  </script>
+
+  <style>
+    .head { padding: 40px 0 24px; }
+    .back {
+      font-family: 'JetBrains Mono', monospace; font-size: 13px;
+      text-decoration: none; color: var(--teal);
+    }
+    h1 {
+      font-family: 'Fraunces', serif; font-weight: 900;
+      font-size: clamp(30px, 5vw, 46px); letter-spacing: -0.02em;
+      margin-top: 8px;
+    }
+    .desc { color: #6a6052; margin-top: 6px; max-width: 60ch; }
+    .tools { display: flex; align-items: center; gap: 10px; margin-top: 22px; }
+    .tools button {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer;
+      background: #fff; border: 1px solid var(--line); color: var(--ink);
+      padding: 8px 14px; border-radius: 8px; transition: 0.15s;
+    }
+    .tools button:hover { background: var(--rust); color: #fff; border-color: var(--rust); }
+    .tools .n {
+      margin-left: auto; font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; color: #7a6f60;
+    }
+    .list { margin-bottom: 40px; }
+  </style>
+</Base>

@@ -1,0 +1,91 @@
+---
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'questions'>;
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { question, difficulty, tags } = entry.data;
+---
+
+<details class="qa">
+  <summary>
+    <span class="qmark">Q.</span>
+    <span class="qtext">{question}</span>
+    <span class={`tag ${difficulty}`}>{difficulty}</span>
+    <span class="arrow">›</span>
+  </summary>
+  <div class="answer">
+    <Content />
+    {tags.length > 0 && (
+      <div class="tags">
+        {tags.map((t) => <span class="chip">#{t}</span>)}
+      </div>
+    )}
+  </div>
+</details>
+
+<style>
+  .qa {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 20px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-weight: 600;
+    font-size: 17px;
+    transition: background 0.15s;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary:hover { background: var(--paper2); }
+  .qmark {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700; color: var(--rust); flex-shrink: 0; margin-top: 1px;
+  }
+  .qtext { flex: 1; }
+  .arrow {
+    flex-shrink: 0; color: var(--gold); transition: transform 0.2s;
+    font-size: 18px; line-height: 1.4;
+  }
+  .qa[open] .arrow { transform: rotate(90deg); }
+  .qa[open] summary { background: var(--paper2); border-bottom: 1px solid var(--line); }
+
+  .tag {
+    flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 3px 8px; border-radius: 5px;
+    margin-top: 2px;
+  }
+  .tag.easy { background: #e3f0e7; color: #1f6f4a; }
+  .tag.medium { background: #fdf0d8; color: #9a6b12; }
+  .tag.hard { background: #f7dfd8; color: #9f3018; }
+
+  .answer { padding: 8px 22px 20px 48px; font-size: 15.5px; color: #352c22; }
+  .answer :global(p) { margin: 10px 0; }
+  .answer :global(ul) { margin: 10px 0 10px 4px; padding-left: 20px; }
+  .answer :global(li) { margin: 5px 0; }
+  .answer :global(strong) { color: var(--rust-dk); }
+
+  .tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    background: var(--paper2); border: 1px solid var(--line);
+    padding: 2px 8px; border-radius: 100px; color: #7a6f60;
+  }
+
+  @media (max-width: 600px) {
+    .answer { padding-left: 22px; }
+  }
+</style>
