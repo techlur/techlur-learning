@@ -1,0 +1,55 @@
+{
+  "$ref": "#/definitions/questions",
+  "definitions": {
+    "questions": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "type": "string",
+          "minLength": 8
+        },
+        "section": {
+          "type": "string",
+          "enum": [
+            "backend",
+            "frontend",
+            "database",
+            "ai",
+            "general"
+          ]
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": [
+            "easy",
+            "medium",
+            "hard"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "order": {
+          "type": "number"
+        },
+        "author": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "question",
+        "section",
+        "difficulty"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
