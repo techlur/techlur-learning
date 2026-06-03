@@ -31,7 +31,7 @@ const { questions, meta } = Astro.props;
 
 <Base title={`${meta.label} — Interview Prep`} description={meta.desc}>
   <section class="head">
-    <a class="back" href="/">← all sections</a>
+    <a class="back" href="/">&larr; all sections</a>
     <h1>{meta.label}</h1>
     <p class="desc">{meta.desc}</p>
     <div class="tools">
@@ -56,27 +56,82 @@ const { questions, meta } = Astro.props;
 
   <style>
     .head { padding: 40px 0 24px; }
+    @media (min-width: 768px) { .head { padding: 50px 0 28px; } }
+    @media (min-width: 1024px) { .head { padding: 90px 0 32px; } }
+
     .back {
-      font-family: 'JetBrains Mono', monospace; font-size: 13px;
-      text-decoration: none; color: var(--teal);
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--color-primary);
+      transition: color 0.15s;
     }
+    .back:hover { color: var(--color-accent-dark); }
+
     h1 {
-      font-family: 'Fraunces', serif; font-weight: 900;
-      font-size: clamp(30px, 5vw, 46px); letter-spacing: -0.02em;
+      font-weight: 700;
+      font-size: clamp(30px, 5vw, 46px);
+      letter-spacing: -0.02em;
       margin-top: 8px;
+      color: var(--color-gray);
     }
-    .desc { color: #6a6052; margin-top: 6px; max-width: 60ch; }
-    .tools { display: flex; align-items: center; gap: 10px; margin-top: 22px; }
+    .desc {
+      color: var(--color-gray-400);
+      margin-top: 6px;
+      max-width: 60ch;
+    }
+
+    .tools {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+    }
     .tools button {
-      font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer;
-      background: #fff; border: 1px solid var(--line); color: var(--ink);
-      padding: 8px 14px; border-radius: 8px; transition: 0.15s;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      color: var(--color-gray-500);
+      padding: 8px 16px;
+      border-radius: 9999px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .tools button:hover { background: var(--rust); color: #fff; border-color: var(--rust); }
+    .tools button:hover {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-green);
+    }
     .tools .n {
-      margin-left: auto; font-family: 'JetBrains Mono', monospace;
-      font-size: 12px; color: #7a6f60;
+      margin-left: auto;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 12px;
+      color: var(--color-gray-400);
     }
-    .list { margin-bottom: 40px; }
+
+    .list {
+      margin-bottom: 40px;
+      max-width: 900px;
+    }
+
+    /* Dark mode */
+    :global(.dark) h1 { color: #f9fafb; }
+    :global(.dark) .desc { color: #9ca3af; }
+    :global(.dark) .tools button {
+      background: var(--color-dark-card);
+      border-color: var(--color-dark-border);
+      color: #d1d5db;
+    }
+    :global(.dark) .tools button:hover {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: #fff;
+    }
+    :global(.dark) .tools .n { color: #9ca3af; }
   </style>
 </Base>

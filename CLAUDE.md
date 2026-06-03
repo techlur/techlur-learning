@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Fresher Interview Prep is a community-driven, open-source interview preparation platform built with **Astro 5**. It serves interview questions organized by topic (backend, frontend, database, ai, general) with model answers, all stored as Markdown files in a content collection.
+Techlur Learning is a community-driven, open-source interview preparation platform built with **Astro 5**, branded to match the Techlur corporate website (techlursoftware.com). It serves interview questions organized by topic (backend, frontend, database, ai, general) with model answers, all stored as Markdown files in a content collection.
 
 ## Commands
 
@@ -21,7 +21,7 @@ npm run check     # Type-check .astro files with @astrojs/check
 
 - **Content collection** (`src/content/questions/`): Markdown files grouped by section subdirectory (backend, frontend, database, ai, general). Each file has Zod-validated frontmatter defined in `src/content/config.ts`.
 - **Pages** (`src/pages/`): `index.astro` (home with section grid) and `[section].astro` (dynamic route rendering all questions for a section, sorted by `order`).
-- **Layout** (`src/layouts/Base.astro`): Single root layout with sticky header, footer, global styles, and Google Fonts (Fraunces, Spline Sans, JetBrains Mono).
+- **Layout** (`src/layouts/Base.astro`): Single root layout with glass-morphism sticky header (matching techlursoftware.com), dark 4-column footer with social icons, global styles, and Google Fonts (Inter, JetBrains Mono). Mobile hamburger drawer for nav.
 - **Components** (`src/components/QuestionCard.astro`): Uses native HTML `<details>` for expand/collapse — zero client JS.
 - **React integration** is configured (`@astrojs/react`) but minimally used; the site is primarily Astro components.
 
@@ -48,10 +48,14 @@ Bad frontmatter fails the build, which acts as CI validation.
 
 ## Design Tokens
 
-CSS custom properties defined in `Base.astro`:
-- `--ink` (dark text), `--paper`/`--paper2` (backgrounds), `--rust`/`--rust-dk` (primary accent), `--teal` (secondary), `--gold` (tertiary), `--line` (borders)
-- Typography: Fraunces for headings, Spline Sans for body, JetBrains Mono for code
-- Fluid typography via `clamp()`, max content width 900px
+CSS custom properties in `Base.astro` match the Techlur corporate website (`techlursoftware.com`):
+- `--color-primary: #12aa5b`, `--color-accent-dark: #0e8a49`, `--color-accent-light: #d1fae5`, `--color-primary-50: #f0fdf4`
+- `--color-gray: #1f2937` (headings), `--color-gray-500: #494b51` (body text), `--color-gray-400: #9ca3af` (muted text)
+- `--color-muted: #f1f5f9` (light bg), `--color-border: #e5e7eb`, `--color-dark-bg: #0d1117` (code blocks)
+- `--shadow-green`, `--shadow-gray`, `--gradient-accent` (button/CTA gradient)
+- Typography: Inter (Google Fonts, 400-700) for all text, JetBrains Mono for code
+- Logo SVGs in `public/images/`: `techlur-logo.svg` (header), `techlur-logo-g.svg` (footer)
+- Max content width 1200px, glass-morphism sticky header, dark (#111827) 4-column footer
 
 ## Deployment
 

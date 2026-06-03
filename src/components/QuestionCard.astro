@@ -15,7 +15,7 @@ const { question, difficulty, tags } = entry.data;
     <span class="qmark">Q.</span>
     <span class="qtext">{question}</span>
     <span class={`tag ${difficulty}`}>{difficulty}</span>
-    <span class="arrow">›</span>
+    <span class="arrow">&rsaquo;</span>
   </summary>
   <div class="answer">
     <Content />
@@ -30,11 +30,15 @@ const { question, difficulty, tags } = entry.data;
 <style>
   .qa {
     background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 14px;
+    border: 1px solid rgba(18, 170, 91, 0.1);
+    border-radius: 12px;
     margin-bottom: 14px;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .qa:hover {
+    box-shadow: var(--shadow-green);
   }
   summary {
     list-style: none;
@@ -48,44 +52,104 @@ const { question, difficulty, tags } = entry.data;
     transition: background 0.15s;
   }
   summary::-webkit-details-marker { display: none; }
-  summary:hover { background: var(--paper2); }
+  summary:hover { background: var(--color-muted); }
   .qmark {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 700; color: var(--rust); flex-shrink: 0; margin-top: 1px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-weight: 700;
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 1px;
   }
-  .qtext { flex: 1; }
+  .qtext {
+    flex: 1;
+    color: var(--color-gray);
+  }
   .arrow {
-    flex-shrink: 0; color: var(--gold); transition: transform 0.2s;
-    font-size: 18px; line-height: 1.4;
+    flex-shrink: 0;
+    color: var(--color-primary);
+    transition: transform 0.2s;
+    font-size: 18px;
+    line-height: 1.4;
   }
   .qa[open] .arrow { transform: rotate(90deg); }
-  .qa[open] summary { background: var(--paper2); border-bottom: 1px solid var(--line); }
+  .qa[open] summary {
+    background: var(--color-muted);
+    border-bottom: 1px solid var(--color-border);
+  }
 
   .tag {
     flex-shrink: 0;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em;
-    text-transform: uppercase; padding: 3px 8px; border-radius: 5px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 9999px;
     margin-top: 2px;
   }
-  .tag.easy { background: #e3f0e7; color: #1f6f4a; }
-  .tag.medium { background: #fdf0d8; color: #9a6b12; }
-  .tag.hard { background: #f7dfd8; color: #9f3018; }
+  .tag.easy { background: var(--color-primary-50); color: var(--color-accent-dark); }
+  .tag.medium { background: #fffbeb; color: #b45309; }
+  .tag.hard { background: #fef2f2; color: #dc2626; }
 
-  .answer { padding: 8px 22px 20px 48px; font-size: 15.5px; color: #352c22; }
+  .answer {
+    padding: 8px 22px 20px 48px;
+    font-size: 15.5px;
+    color: var(--color-gray-500);
+  }
   .answer :global(p) { margin: 10px 0; }
   .answer :global(ul) { margin: 10px 0 10px 4px; padding-left: 20px; }
   .answer :global(li) { margin: 5px 0; }
-  .answer :global(strong) { color: var(--rust-dk); }
+  .answer :global(strong) { color: var(--color-accent-dark); }
 
   .tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
   .chip {
-    font-family: 'JetBrains Mono', monospace; font-size: 11px;
-    background: var(--paper2); border: 1px solid var(--line);
-    padding: 2px 8px; border-radius: 100px; color: #7a6f60;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px;
+    background: var(--color-primary-50);
+    border: 1px solid rgba(18, 170, 91, 0.15);
+    padding: 2px 10px;
+    border-radius: 9999px;
+    color: var(--color-accent-dark);
   }
 
   @media (max-width: 600px) {
     .answer { padding-left: 22px; }
+  }
+
+  /* Dark mode */
+  :global(.dark) .qa {
+    background: var(--color-dark-card);
+    border-color: var(--color-dark-border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  :global(.dark) .qa:hover {
+    box-shadow: var(--shadow-green);
+    border-color: var(--color-primary);
+  }
+  :global(.dark) summary:hover { background: rgba(255, 255, 255, 0.05); }
+  :global(.dark) .qa[open] summary {
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom-color: var(--color-dark-border);
+  }
+  :global(.dark) .qtext { color: #e5e7eb; }
+  :global(.dark) .answer { color: #d1d5db; }
+  :global(.dark) .answer :global(strong) { color: var(--color-accent-light); }
+  :global(.dark) .tag.easy {
+    background: rgba(18, 170, 91, 0.15);
+    color: var(--color-accent-light);
+  }
+  :global(.dark) .tag.medium {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+  }
+  :global(.dark) .tag.hard {
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+  }
+  :global(.dark) .chip {
+    background: rgba(18, 170, 91, 0.1);
+    border-color: rgba(18, 170, 91, 0.2);
+    color: var(--color-accent-light);
   }
 </style>

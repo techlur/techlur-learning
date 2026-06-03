@@ -18,13 +18,13 @@ const sections = [
 const total = all.length;
 ---
 
-<Base title="Fresher Interview Prep — Web Development">
+<Base title="Techlur Learning — Web Development Interview Prep">
   <section class="hero">
-    <p class="eyebrow">// open-source · community-driven</p>
-    <h1>The Fresher's <em>Interview</em> Playbook</h1>
+    <p class="eyebrow">// open-source &middot; community-driven</p>
+    <h1>The Developer's <em>Interview</em> Playbook</h1>
     <p class="sub">
       A community-built bank of web development interview questions with model
-      answers — for Node.js / NestJS · React · MySQL aspirants. Add yours via a
+      answers — for Node.js / NestJS &middot; React &middot; MySQL aspirants. Add yours via a
       Markdown pull request.
     </p>
     <p class="stat"><strong>{total}</strong> questions and growing</p>
@@ -36,54 +36,113 @@ const total = all.length;
         <span class="count">{s.count} Q</span>
         <h2>{s.label}</h2>
         <p>{s.desc}</p>
-        <span class="go">Browse →</span>
+        <span class="go">Browse &rarr;</span>
       </a>
     ))}
   </div>
 
   <style>
-    .hero { padding: 56px 0 36px; max-width: 60ch; }
+    .hero { padding: 40px 0 36px; max-width: 60ch; }
+    @media (min-width: 768px) { .hero { padding: 50px 0 40px; } }
+    @media (min-width: 1024px) { .hero { padding: 90px 0 50px; } }
+
     .eyebrow {
-      font-family: 'JetBrains Mono', monospace; font-size: 12px;
-      letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold);
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--color-primary);
       margin-bottom: 16px;
     }
     h1 {
-      font-family: 'Fraunces', serif; font-weight: 900;
-      font-size: clamp(36px, 6vw, 60px); line-height: 1.02;
+      font-weight: 700;
+      font-size: clamp(34px, 5.5vw, 56px);
+      line-height: 1.08;
       letter-spacing: -0.02em;
+      color: var(--color-gray);
     }
-    h1 em { color: var(--rust); font-style: normal; }
-    .sub { margin-top: 20px; font-size: 18px; color: #6a6052; }
+    h1 em {
+      color: var(--color-primary);
+      font-style: normal;
+    }
+    .sub {
+      margin-top: 20px;
+      font-size: 18px;
+      color: var(--color-gray-400);
+      line-height: 1.6;
+    }
     .stat {
-      margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 14px;
-      color: var(--teal);
+      margin-top: 18px;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 14px;
+      color: var(--color-primary);
     }
-    .stat strong { color: var(--rust); font-size: 18px; }
+    .stat strong {
+      color: var(--color-accent-dark);
+      font-size: 18px;
+    }
 
     .grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px; margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-bottom: 40px;
     }
     .card {
-      display: block; text-decoration: none; color: var(--ink);
-      background: #fff; border: 1px solid var(--line); border-radius: 16px;
-      padding: 22px; transition: 0.18s; position: relative;
-      box-shadow: var(--shadow);
+      display: block;
+      text-decoration: none;
+      color: var(--color-gray);
+      background: #fff;
+      border: 1px solid rgba(18, 170, 91, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
-    .card:hover { transform: translateY(-3px); border-color: var(--rust); }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-green);
+      border-color: var(--color-primary);
+    }
     .count {
-      font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
-      color: var(--gold);
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--color-primary);
     }
     .card h2 {
-      font-family: 'Fraunces', serif; font-weight: 600; font-size: 24px;
-      margin: 6px 0 4px;
+      font-weight: 700;
+      font-size: 22px;
+      margin: 8px 0 6px;
+      color: var(--color-gray);
     }
-    .card p { font-size: 14px; color: #7a6f60; }
+    .card p {
+      font-size: 14px;
+      color: var(--color-gray-400);
+    }
     .go {
-      display: inline-block; margin-top: 14px; font-size: 14px; font-weight: 600;
-      color: var(--rust-dk);
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-accent-dark);
     }
+
+    /* Dark mode */
+    :global(.dark) h1 { color: #f9fafb; }
+    :global(.dark) .sub { color: #9ca3af; }
+    :global(.dark) .card {
+      background: var(--color-dark-card);
+      border-color: var(--color-dark-border);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    :global(.dark) .card:hover {
+      box-shadow: var(--shadow-green);
+      border-color: var(--color-primary);
+    }
+    :global(.dark) .card h2 { color: #f9fafb; }
+    :global(.dark) .card p { color: #9ca3af; }
+    :global(.dark) .go { color: var(--color-accent); }
   </style>
 </Base>

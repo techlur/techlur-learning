@@ -4,12 +4,27 @@ interface Props {
   description?: string;
 }
 const { title, description = 'Community-driven web development interview prep.' } = Astro.props;
-const sections = [
+const navLinks = [
   { id: 'backend', label: 'Backend' },
   { id: 'frontend', label: 'Frontend' },
   { id: 'database', label: 'Database' },
   { id: 'ai', label: 'AI & LLMs' },
   { id: 'general', label: 'General & HR' },
+];
+
+const footerSections = [
+  { name: 'Backend', href: '/backend' },
+  { name: 'Frontend', href: '/frontend' },
+  { name: 'Database', href: '/database' },
+  { name: 'AI & LLMs', href: '/ai' },
+  { name: 'General & HR', href: '/general' },
+];
+
+const footerCompany = [
+  { name: 'About Us', href: 'https://techlursoftware.com/about' },
+  { name: 'Products', href: 'https://techlursoftware.com/products' },
+  { name: 'Portfolio', href: 'https://techlursoftware.com/portfolio' },
+  { name: 'Services', href: 'https://techlursoftware.com/services' },
 ];
 ---
 
@@ -20,118 +35,788 @@ const sections = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Spline+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Theme init (runs before paint to prevent flash) -->
+    <script is:inline>
+      (function(){
+        try {
+          var m = localStorage.getItem('techlur-mode');
+          if (!m) m = 'dark';
+          if (m === 'dark') document.documentElement.classList.add('dark');
+        } catch(e) {}
+      })();
+    </script>
   </head>
   <body>
-    <header class="site-head">
-      <a href="/" class="brand">
-        <span class="brand-mark">{`{ }`}</span>
-        <span>Fresher Interview Prep</span>
-      </a>
-      <nav class="site-nav">
-        {sections.map((s) => <a href={`/${s.id}`}>{s.label}</a>)}
-        <a class="gh" href="https://github.com/your-username/fresher-interview-prep" target="_blank" rel="noopener">
-          ★ Contribute
-        </a>
+    <!-- Header -->
+    <header class="site-header">
+      <nav class="header-container">
+        <div class="header-inner">
+          <a href="/" class="logo-link">
+            <img src="/images/techlur-logo.svg" alt="techlur logo" class="logo-img logo-light" />
+            <img src="/images/techlur-logo-white.svg" alt="techlur logo" class="logo-img logo-dark" />
+          </a>
+
+          <div class="nav-right">
+            {navLinks.map((s) => (
+              <a href={`/${s.id}`} class="nav-link">{s.label}</a>
+            ))}
+
+            <!-- Dark/Light Toggle -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+              <!-- Sun icon (shown in dark mode) -->
+              <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              <!-- Moon icon (shown in light mode) -->
+              <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+
+            <a href="https://techlursoftware.com/contact" target="_blank" rel="noopener" class="nav-cta">
+              Get free consultation
+            </a>
+          </div>
+
+          <!-- Mobile: theme toggle + hamburger -->
+          <div class="mobile-actions">
+            <button class="theme-toggle" id="themeToggleMobile" aria-label="Toggle dark mode">
+              <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <button class="mobile-menu-btn" aria-label="Open menu">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+          </div>
+        </div>
       </nav>
     </header>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-backdrop"></div>
+    <div class="mobile-drawer">
+      <div class="mobile-drawer-header">
+        <a href="/">
+          <img src="/images/techlur-logo.svg" alt="techlur logo" class="logo-light" />
+          <img src="/images/techlur-logo-white.svg" alt="techlur logo" class="logo-dark" />
+        </a>
+        <button class="mobile-close-btn" aria-label="Close menu">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      {navLinks.map((s) => (
+        <a href={`/${s.id}`} class="mobile-nav-link">{s.label}</a>
+      ))}
+      <a href="https://techlursoftware.com/contact" target="_blank" rel="noopener" class="mobile-cta">
+        Get free consultation
+      </a>
+    </div>
 
     <main>
       <slot />
     </main>
 
-    <footer class="site-foot">
-      <p>
-        Open-source &middot; add a question by opening a PR with a Markdown file.
-        See <a href="https://github.com/your-username/fresher-interview-prep/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.
-      </p>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-accent-line"></div>
+
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Company Info -->
+          <div class="footer-brand">
+            <a href="/" class="footer-logo-link">
+              <img src="/images/techlur-logo-g.svg" alt="techlur logo" class="footer-logo-img" />
+            </a>
+            <p class="footer-desc">
+              Community-driven interview prep for web developers. Open-source questions with model answers — your vision, our expertise.
+            </p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/techlursoftware/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+                <svg class="icon-svg" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/company/techlur/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                <svg class="icon-svg" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Sections -->
+          <div class="footer-links-col">
+            <h3 class="footer-heading">Sections</h3>
+            <ul class="footer-list">
+              {footerSections.map((item) => (
+                <li><a href={item.href} class="footer-link">{item.name}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div class="footer-links-col">
+            <h3 class="footer-heading">Company</h3>
+            <ul class="footer-list">
+              {footerCompany.map((item) => (
+                <li><a href={item.href} target="_blank" rel="noopener" class="footer-link">{item.name}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-links-col footer-contact-col">
+            <h3 class="footer-heading">Contact</h3>
+            <div class="footer-contact-list">
+              <a href="mailto:info@techlursoftware.com" class="footer-contact-item">
+                <div class="contact-icon-wrap">
+                  <svg class="icon-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                info@techlursoftware.com
+              </a>
+              <a href="tel:+917668325180" class="footer-contact-item">
+                <div class="contact-icon-wrap">
+                  <svg class="icon-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                +91-7668325180
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+          <p class="footer-copyright">&copy; {new Date().getFullYear()} Techlur Software Private Limited. All rights reserved.</p>
+          <p class="footer-cin">CIN: U72900PB2020PTC050711</p>
+        </div>
+      </div>
     </footer>
 
     <style is:global>
+      /* ===== CSS Variables (matching techlursoftware.com) ===== */
       :root {
-        --ink: #1a1410;
-        --paper: #faf6ef;
-        --paper2: #f3ecdf;
-        --rust: #b5462a;
-        --rust-dk: #8f3014;
-        --teal: #1f6f63;
-        --gold: #c8932a;
-        --line: #ddd1bd;
-        --shadow: 0 1px 0 rgba(0, 0, 0, 0.04), 0 8px 28px -18px rgba(60, 40, 20, 0.5);
+        --color-primary: #12aa5b;
+        --color-primary-50: #f0fdf4;
+        --color-accent: #12aa5b;
+        --color-accent-dark: #0e8a49;
+        --color-accent-light: #d1fae5;
+        --color-gray: #1f2937;
+        --color-gray-200: #e5e7eb;
+        --color-gray-400: #9ca3af;
+        --color-gray-500: #494b51;
+        --color-muted: #f1f5f9;
+        --color-dark-bg: #0d1117;
+        --color-dark-card: #161b22;
+        --color-dark-border: #30363d;
+        --color-border: #e5e7eb;
+        --shadow-green: 0 10px 25px rgba(2, 137, 54, 0.15);
+        --shadow-gray: 0 5px 15px rgba(0, 0, 0, 0.08);
+        --gradient-accent: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
       }
-      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      /* ===== Reset ===== */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
       html { scroll-behavior: smooth; }
+
+      /* ===== Body + sticky footer ===== */
+      html, body { height: 100%; }
       body {
-        font-family: 'Spline Sans', system-ui, sans-serif;
-        background: var(--paper);
-        color: var(--ink);
+        font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+        background: #ffffff;
+        color: var(--color-gray-500);
         line-height: 1.62;
         font-size: 16px;
         -webkit-font-smoothing: antialiased;
+        font-feature-settings: 'rlig' 1, 'calt' 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
-      a { color: var(--rust-dk); }
+      main { flex: 1; }
 
-      .site-head {
-        display: flex; align-items: center; justify-content: space-between;
-        flex-wrap: wrap; gap: 14px;
-        padding: 18px 22px;
-        background: var(--ink); color: var(--paper);
-        border-bottom: 4px solid var(--rust);
-        position: sticky; top: 0; z-index: 20;
-      }
-      .brand {
-        display: flex; align-items: center; gap: 10px;
-        color: var(--paper); text-decoration: none;
-        font-family: 'Fraunces', serif; font-weight: 900; font-size: 20px;
-      }
-      .brand-mark {
-        font-family: 'JetBrains Mono', monospace; color: var(--gold);
-        font-weight: 700;
-      }
-      .site-nav { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-      .site-nav a {
-        color: rgba(250, 246, 239, 0.85); text-decoration: none;
-        font-size: 14px; padding: 7px 12px; border-radius: 8px;
-        transition: 0.15s;
-      }
-      .site-nav a:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
-      .site-nav a.gh {
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        font-family: 'JetBrains Mono', monospace; font-size: 12.5px;
-        color: var(--gold);
-      }
-      .site-nav a.gh:hover { background: var(--rust); color: #fff; border-color: var(--rust); }
+      /* ===== Custom Scrollbar ===== */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #f1f5f9; }
+      ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #64748b; }
 
-      main { max-width: 900px; margin: 0 auto; padding: 0 22px 60px; }
+      /* ===== Selection ===== */
+      ::selection { background: #dbeafe; color: #1e3a8a; }
 
-      .site-foot {
-        background: var(--ink); color: rgba(250, 246, 239, 0.7);
-        text-align: center; padding: 32px 22px; font-size: 14px;
-        border-top: 4px solid var(--gold);
+      /* ===== Links ===== */
+      a { color: var(--color-accent-dark); }
+
+      /* ===== Logo visibility ===== */
+      .logo-dark { display: none; }
+      .logo-light { display: block; }
+
+      /* ===== Theme toggle button ===== */
+      .theme-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        border-radius: 8px;
+        border: none;
+        background: transparent;
+        color: #6b7280;
+        cursor: pointer;
+        transition: all 0.15s;
       }
-      .site-foot a { color: var(--gold); }
+      .theme-toggle:hover {
+        background: #f3f4f6;
+        color: var(--color-gray);
+      }
+      .theme-toggle svg {
+        width: 20px;
+        height: 20px;
+      }
+      .icon-sun { display: none; }
+      .icon-moon { display: block; }
 
-      /* shared code styling for rendered markdown */
+      /* ===== Header ===== */
+      .site-header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04);
+        transition: all 0.3s;
+      }
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      @media (min-width: 768px) {
+        .header-inner { height: 80px; }
+        .header-container { padding: 0 24px; }
+      }
+
+      .logo-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+      .logo-img {
+        height: auto;
+        width: 112px;
+      }
+      @media (min-width: 768px) { .logo-img { width: 128px; } }
+      @media (min-width: 1024px) { .logo-img { width: 160px; } }
+
+      .nav-right {
+        display: none;
+        align-items: center;
+        gap: 16px;
+      }
+      @media (min-width: 768px) {
+        .nav-right { display: flex; }
+      }
+      @media (min-width: 1024px) {
+        .nav-right { gap: 32px; }
+      }
+
+      .nav-link {
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--color-gray);
+        transition: color 0.15s;
+        border-radius: 8px;
+        padding: 6px 4px;
+      }
+      .nav-link:hover {
+        color: var(--color-primary);
+      }
+
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        border-radius: 9999px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        background: var(--gradient-accent);
+        height: 48px;
+        padding: 16px 24px;
+        box-shadow: var(--shadow-gray);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-green);
+        color: #fff;
+      }
+
+      /* Mobile actions row */
+      .mobile-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      @media (min-width: 768px) {
+        .mobile-actions { display: none; }
+      }
+
+      /* ===== Main ===== */
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px 60px;
+        width: 100%;
+      }
+      @media (min-width: 768px) {
+        main { padding: 0 24px 60px; }
+      }
+
+      /* ===== Footer ===== */
+      .site-footer {
+        background: #111827;
+        color: #fff;
+      }
+      .footer-accent-line {
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(to right, transparent, var(--color-primary), transparent);
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 64px 16px 32px;
+      }
+      @media (min-width: 640px) {
+        .footer-container { padding: 64px 24px 32px; }
+      }
+      @media (min-width: 1024px) {
+        .footer-container { padding: 64px 32px 32px; }
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      @media (min-width: 768px) {
+        .footer-grid { grid-template-columns: 1fr 1fr; }
+      }
+      @media (min-width: 1024px) {
+        .footer-grid { grid-template-columns: 4fr 2fr 2fr 4fr; }
+      }
+
+      .footer-brand { max-width: 360px; }
+      .footer-logo-link {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+      .footer-logo-img {
+        width: 180px;
+        height: auto;
+      }
+      .footer-desc {
+        margin-bottom: 24px;
+        line-height: 1.625;
+        color: #9ca3af;
+        font-size: 14px;
+      }
+      .footer-social {
+        display: flex;
+        gap: 12px;
+      }
+      .social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: #1f2937;
+        color: #9ca3af;
+        transition: all 0.15s;
+        text-decoration: none;
+      }
+      .social-icon:hover {
+        background: rgba(18, 170, 91, 0.2);
+        color: var(--color-primary);
+      }
+      .icon-svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .footer-heading {
+        margin-bottom: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #fff;
+      }
+      .footer-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .footer-link {
+        color: #9ca3af;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.15s;
+      }
+      .footer-link:hover {
+        color: var(--color-primary);
+      }
+
+      .footer-contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .footer-contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #9ca3af;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.15s;
+      }
+      .footer-contact-item:hover {
+        color: var(--color-primary);
+      }
+      .contact-icon-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        background: #1f2937;
+        transition: background 0.15s;
+      }
+      .footer-contact-item:hover .contact-icon-wrap {
+        background: rgba(18, 170, 91, 0.2);
+      }
+
+      .footer-bottom {
+        margin-top: 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        border-top: 1px solid #1f2937;
+        padding-top: 32px;
+        font-size: 14px;
+      }
+      @media (min-width: 640px) {
+        .footer-bottom { flex-direction: row; }
+      }
+      .footer-copyright { color: #9ca3af; }
+      .footer-cin { color: #6b7280; }
+
+      /* ===== Code Blocks ===== */
       pre {
-        background: #241d17; color: #f0e7d8; border-radius: 10px;
-        padding: 16px 18px; overflow-x: auto; margin: 14px 0;
-        font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.6;
+        background: var(--color-dark-bg);
+        color: #e6edf3;
+        border-radius: 12px;
+        padding: 16px 18px;
+        overflow-x: auto;
+        margin: 14px 0;
+        font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 13px;
+        line-height: 1.6;
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
       :not(pre) > code {
-        font-family: 'JetBrains Mono', monospace; font-size: 0.88em;
-        background: var(--paper2); border: 1px solid var(--line);
-        padding: 1px 6px; border-radius: 5px; color: var(--rust-dk);
+        font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.88em;
+        background: var(--color-primary-50);
+        border: 1px solid rgba(18, 170, 91, 0.15);
+        padding: 1px 6px;
+        border-radius: 5px;
+        color: var(--color-accent-dark);
       }
       blockquote {
-        border-left: 4px solid var(--teal);
-        background: #eaf4f1; padding: 12px 16px; border-radius: 0 10px 10px 0;
-        margin: 14px 0; font-size: 0.95em;
+        border-left: 4px solid var(--color-primary);
+        background: var(--color-primary-50);
+        padding: 12px 16px;
+        border-radius: 0 10px 10px 0;
+        margin: 14px 0;
+        font-size: 0.95em;
       }
+
+      /* ===== Mobile nav (hamburger) ===== */
+      .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        border-radius: 8px;
+        border: none;
+        background: transparent;
+        color: var(--color-gray);
+        cursor: pointer;
+      }
+      .mobile-menu-btn svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      /* Mobile drawer backdrop */
+      .mobile-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        background: rgba(0, 0, 0, 0.2);
+      }
+      .mobile-backdrop.open { display: block; }
+
+      .mobile-drawer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 256px;
+        background: #fff;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        z-index: 51;
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+        padding: 24px;
+      }
+      .mobile-drawer.open { transform: translateX(0); }
+
+      .mobile-drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+      .mobile-drawer-header img {
+        width: 112px;
+        height: auto;
+      }
+      .mobile-close-btn {
+        border: none;
+        background: transparent;
+        color: var(--color-gray);
+        cursor: pointer;
+        padding: 4px;
+      }
+      .mobile-close-btn svg {
+        width: 24px;
+        height: 24px;
+      }
+      .mobile-nav-link {
+        display: block;
+        padding: 12px 0;
+        text-decoration: none;
+        font-size: 16px;
+        color: var(--color-gray);
+        transition: color 0.15s;
+      }
+      .mobile-nav-link:hover { color: var(--color-primary); }
+      .mobile-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        border-radius: 9999px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        background: var(--gradient-accent);
+        height: 48px;
+        padding: 16px 24px;
+        margin-top: 24px;
+        transition: all 0.3s;
+      }
+
+      /* ========================================================
+         DARK MODE (matching techlursoftware.com dark theme)
+         ======================================================== */
+      .dark body {
+        background: var(--color-dark-bg);
+        color: #d1d5db;
+      }
+
+      /* Scrollbar */
+      .dark ::-webkit-scrollbar-track { background: #1e293b; }
+      .dark ::-webkit-scrollbar-thumb { background: #475569; }
+      .dark ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+      /* Selection */
+      .dark ::selection { background: #1e3a5f; color: #93c5fd; }
+
+      /* Links */
+      .dark a { color: var(--color-accent); }
+
+      /* Logo swap */
+      .dark .logo-dark { display: block; }
+      .dark .logo-light { display: none; }
+
+      /* Theme toggle icon swap */
+      .dark .icon-sun { display: block; }
+      .dark .icon-moon { display: none; }
+      .dark .theme-toggle {
+        color: #9ca3af;
+      }
+      .dark .theme-toggle:hover {
+        background: #1f2937;
+        color: #e5e7eb;
+      }
+
+      /* Header */
+      .dark .site-header {
+        background: rgba(13, 17, 23, 0.95);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2);
+      }
+      .dark .nav-link {
+        color: #e5e7eb;
+      }
+      .dark .nav-link:hover {
+        color: var(--color-primary);
+      }
+
+      /* Mobile */
+      .dark .mobile-menu-btn { color: #e5e7eb; }
+      .dark .mobile-drawer {
+        background: #111827;
+      }
+      .dark .mobile-nav-link { color: #e5e7eb; }
+      .dark .mobile-close-btn { color: #e5e7eb; }
+
+      /* Cards & content (used by page-level styles) */
+      .dark .card,
+      .dark .qa {
+        background: var(--color-dark-card);
+        border-color: var(--color-dark-border);
+      }
+      .dark .card:hover,
+      .dark .qa:hover {
+        border-color: var(--color-primary);
+      }
+      .dark summary:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .dark .qa[open] summary {
+        background: rgba(255, 255, 255, 0.05);
+        border-bottom-color: var(--color-dark-border);
+      }
+      .dark .qtext { color: #e5e7eb; }
+      .dark .answer { color: #d1d5db; }
+
+      /* Inline code in dark mode */
+      .dark :not(pre) > code {
+        background: rgba(18, 170, 91, 0.1);
+        border-color: rgba(18, 170, 91, 0.2);
+        color: var(--color-accent-light);
+      }
+
+      /* Blockquote */
+      .dark blockquote {
+        background: rgba(18, 170, 91, 0.08);
+        border-left-color: var(--color-primary);
+      }
+
+      /* Tags / chips */
+      .dark .chip {
+        background: rgba(18, 170, 91, 0.1);
+        border-color: rgba(18, 170, 91, 0.2);
+        color: var(--color-accent-light);
+      }
+      .dark .tag.easy {
+        background: rgba(18, 170, 91, 0.15);
+        color: var(--color-accent-light);
+      }
+      .dark .tag.medium {
+        background: rgba(251, 191, 36, 0.15);
+        color: #fbbf24;
+      }
+      .dark .tag.hard {
+        background: rgba(239, 68, 68, 0.15);
+        color: #fca5a5;
+      }
+
+      /* Hero / page headings */
+      .dark h1, .dark h2 { color: #f9fafb; }
+      .dark .sub, .dark .desc { color: #9ca3af; }
+      .dark .card p { color: #9ca3af; }
+      .dark .card h2 { color: #f9fafb; }
+      .dark .go { color: var(--color-accent); }
+      .dark .back { color: var(--color-primary); }
+      .dark .tools button {
+        background: var(--color-dark-card);
+        border-color: var(--color-dark-border);
+        color: #d1d5db;
+      }
+      .dark .tools button:hover {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+        color: #fff;
+      }
+      .dark .tools .n { color: #9ca3af; }
+
+      /* Footer stays dark in both modes (already dark bg) */
+      .dark .site-footer { background: #0a0f18; }
+      .dark .footer-bottom { border-top-color: #1e293b; }
+      .dark .social-icon { background: #1e293b; }
+      .dark .contact-icon-wrap { background: #1e293b; }
     </style>
+
+    <!-- Scripts: mobile menu + theme toggle -->
+    <script is:inline>
+      (function() {
+        // Mobile drawer
+        var btn = document.querySelector('.mobile-menu-btn');
+        var backdrop = document.querySelector('.mobile-backdrop');
+        var drawer = document.querySelector('.mobile-drawer');
+        var closeBtn = document.querySelector('.mobile-close-btn');
+        if (btn && backdrop && drawer && closeBtn) {
+          function openDrawer() {
+            backdrop.classList.add('open');
+            drawer.classList.add('open');
+            document.body.style.overflow = 'hidden';
+          }
+          function closeDrawer() {
+            backdrop.classList.remove('open');
+            drawer.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+          btn.addEventListener('click', openDrawer);
+          backdrop.addEventListener('click', closeDrawer);
+          closeBtn.addEventListener('click', closeDrawer);
+          drawer.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeDrawer); });
+        }
+
+        // Theme toggle
+        function toggleTheme() {
+          var isDark = document.documentElement.classList.toggle('dark');
+          try { localStorage.setItem('techlur-mode', isDark ? 'dark' : 'light'); } catch(e) {}
+        }
+        var t1 = document.getElementById('themeToggle');
+        var t2 = document.getElementById('themeToggleMobile');
+        if (t1) t1.addEventListener('click', toggleTheme);
+        if (t2) t2.addEventListener('click', toggleTheme);
+      })();
+    </script>
   </body>
 </html>
