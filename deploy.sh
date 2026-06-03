@@ -21,6 +21,7 @@ npx astro build
 
 echo "Saving build output to temp..."
 cp -r dist/* "$TEMP_DIR"/
+cp -r dist/.* "$TEMP_DIR"/ 2>/dev/null || true
 
 # Stash uncommitted changes before switching branches
 if ! git diff --quiet || ! git diff --cached --quiet || [ -n "$(git ls-files --others --exclude-standard)" ]; then
@@ -37,6 +38,7 @@ git clean -fd > /dev/null 2>&1
 
 echo "Copying build output..."
 cp -r "$TEMP_DIR"/* .
+cp -r "$TEMP_DIR"/.* . 2>/dev/null || true
 
 echo "Committing..."
 git add .
